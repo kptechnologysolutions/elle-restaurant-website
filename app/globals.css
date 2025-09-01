@@ -1,0 +1,1133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --brand-bg: #0a0a0a;
+  --secondary-bg: #1a1a1a;
+  --ink: #f8f6f0;
+  --subtle-ink: #e8e6e0;
+  --muted-ink: #a8a6a0;
+  --accent-1: #c9a876;
+  --accent-2: #8b7355;
+  --accent-warm: #d4a574;
+  --btn-bg: #c9a876;
+  --btn-text: #0a0a0a;
+  --link: #f8f6f0;
+  --link-hover: #c9a876;
+  --divider: #2a2a2a;
+  --overlay: rgba(10, 10, 10, 0.8);
+}
+
+@layer base {
+  html {
+    font-family: 'Crimson Text', 'Libre Baskerville', Georgia, serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 400;
+    background: var(--brand-bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 300;
+    color: var(--ink);
+  }
+  
+  .hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--ink);
+  }
+  
+  .accent-text {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--accent-1);
+  }
+  
+  button {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+  }
+  
+  ::selection {
+    background: var(--accent-1);
+    color: var(--btn-text);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-1 text-btn-text px-s-8 py-s-4 font-medium uppercase tracking-wider transition-all duration-500 hover:bg-accent-warm hover:shadow-elegant hover:-translate-y-1 rounded-none border border-accent-1;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-accent-1 text-accent-1 px-s-8 py-s-4 font-medium uppercase tracking-wider transition-all duration-500 hover:bg-accent-1 hover:text-btn-text hover:shadow-elegant hover:-translate-y-1 rounded-none backdrop-blur-sm;
+  }
+  
+  .overlay-elegant {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%);
+    backdrop-filter: blur(2px);
+  }
+  
+  .tile-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-elegant;
+  }
+  
+  .fade-in-up {
+    @apply animate-slide-up;
+  }
+  
+  .section-divider {
+    @apply w-24 h-px bg-gradient-to-r from-transparent via-accent-1 to-transparent mx-auto my-s-16;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-secondary-bg/80 border border-divider;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  }
+  
+  .sensory-glow {
+    text-shadow: 0 0 20px rgba(201, 168, 118, 0.3);
+    animation: subtle-pulse 4s ease-in-out infinite;
+  }
+  
+  .appetizing-hover:hover {
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(201, 168, 118, 0.2);
+  }
+  
+  .mouth-water-text {
+    background: linear-gradient(135deg, #f8f6f0 0%, #c9a876 50%, #f8f6f0 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes subtle-pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: 200% 200%; }
+    100% { background-position: -200% -200%; }
+  }
+  
+  .premium-gradient {
+    background: linear-gradient(135deg, 
+      rgba(10, 10, 10, 0.95) 0%, 
+      rgba(26, 26, 26, 0.9) 25%, 
+      rgba(201, 168, 118, 0.1) 50%, 
+      rgba(26, 26, 26, 0.9) 75%, 
+      rgba(10, 10, 10, 0.95) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  /* Modern Hero Styles */
+  .modern-hero {
+    background: radial-gradient(ellipse at center, rgba(201, 168, 118, 0.05) 0%, transparent 70%);
+  }
+  
+  .image-frame-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.3) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(10, 10, 10, 0.3) 100%
+    );
+  }
+  
+  /* Sophisticated Hero Styles */
+  .sophisticated-bg {
+    background: radial-gradient(ellipse at center, rgba(201, 168, 118, 0.03) 0%, rgba(10, 10, 10, 0.8) 70%);
+  }
+  
+  .sophisticated-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.2) 0%,
+      transparent 25%,
+      transparent 75%,
+      rgba(10, 10, 10, 0.2) 100%
+    );
+  }
+  
+  /* Hero Food Collage Styles */
+  .hero-collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-artwork-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    height: 60vh;
+    max-width: 500px;
+    max-height: 600px;
+    z-index: 10;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 
+      0 20px 60px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(201, 168, 118, 0.1);
+  }
+  
+  .artwork-glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, 
+      rgba(201, 168, 118, 0.3), 
+      rgba(212, 165, 116, 0.2), 
+      rgba(139, 115, 85, 0.3));
+    z-index: -1;
+    border-radius: 10px;
+    opacity: 0.6;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+  
+  .hero-food-gallery {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  
+  .food-frame {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(201, 168, 118, 0.1);
+    transition: all 0.5s ease;
+    opacity: 0.8;
+  }
+  
+  .food-frame:hover {
+    opacity: 1;
+    box-shadow: 
+      0 15px 40px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(201, 168, 118, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .food-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(201, 168, 118, 0.1) 0%,
+      transparent 50%,
+      rgba(139, 115, 85, 0.1) 100%
+    );
+    mix-blend-mode: overlay;
+  }
+  
+  /* Positioning for different food frames */
+  .food-top-left {
+    top: 8%;
+    left: 8%;
+    width: 180px;
+    height: 140px;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .food-top-right {
+    top: 12%;
+    right: 6%;
+    width: 160px;
+    height: 120px;
+    animation: float 9s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .food-bottom-left {
+    bottom: 15%;
+    left: 6%;
+    width: 170px;
+    height: 130px;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .food-bottom-right {
+    bottom: 8%;
+    right: 8%;
+    width: 190px;
+    height: 150px;
+    animation: float 10s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .food-mid-left {
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 180px;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+  
+  .food-mid-right {
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 170px;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+  
+  .collage-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.3) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(10, 10, 10, 0.3) 100%
+    );
+    pointer-events: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .hero-artwork-frame {
+      width: 50vw;
+      height: 50vh;
+    }
+    
+    .food-frame {
+      opacity: 0.6;
+    }
+    
+    .food-top-left,
+    .food-top-right,
+    .food-bottom-left,
+    .food-bottom-right {
+      width: 140px;
+      height: 110px;
+    }
+    
+    .food-mid-left,
+    .food-mid-right {
+      width: 100px;
+      height: 140px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-artwork-frame {
+      width: 70vw;
+      height: 45vh;
+    }
+    
+    .food-frame {
+      opacity: 0.4;
+    }
+    
+    .food-top-left,
+    .food-bottom-right {
+      display: none;
+    }
+    
+    .food-top-right {
+      top: 5%;
+      right: 5%;
+      width: 100px;
+      height: 80px;
+    }
+    
+    .food-bottom-left {
+      bottom: 5%;
+      left: 5%;
+      width: 100px;
+      height: 80px;
+    }
+    
+    .food-mid-left,
+    .food-mid-right {
+      width: 80px;
+      height: 100px;
+    }
+  }
+  
+  /* Bohemian Styles */
+  .bohemian-tapestry {
+    background: linear-gradient(135deg, 
+      rgba(139, 115, 85, 0.1) 0%,
+      rgba(201, 168, 118, 0.05) 25%,
+      rgba(26, 26, 26, 0.8) 50%,
+      rgba(201, 168, 118, 0.05) 75%,
+      rgba(139, 115, 85, 0.1) 100%);
+  }
+  
+  .bohemian-pattern {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(201, 168, 118, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
+    background-size: 120px 120px, 160px 160px, 80px 80px;
+  }
+  
+  .bohemian-border-ornament {
+    width: 80px;
+    height: 20px;
+    background: 
+      linear-gradient(45deg, transparent 30%, rgba(201, 168, 118, 0.6) 31%, rgba(201, 168, 118, 0.6) 32%, transparent 33%),
+      linear-gradient(-45deg, transparent 30%, rgba(201, 168, 118, 0.6) 31%, rgba(201, 168, 118, 0.6) 32%, transparent 33%);
+    position: relative;
+  }
+  
+  .bohemian-border-ornament::before,
+  .bohemian-border-ornament::after {
+    content: '❋';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 16px;
+    top: -8px;
+  }
+  
+  .bohemian-border-ornament::before {
+    left: -20px;
+  }
+  
+  .bohemian-border-ornament::after {
+    right: -20px;
+  }
+  
+  .bohemian-text-shadow {
+    text-shadow: 
+      0 0 10px rgba(201, 168, 118, 0.3),
+      0 0 20px rgba(201, 168, 118, 0.2),
+      0 0 30px rgba(201, 168, 118, 0.1);
+  }
+  
+  .bohemian-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      rgba(201, 168, 118, 0.3) 20%,
+      rgba(201, 168, 118, 0.8) 50%,
+      rgba(201, 168, 118, 0.3) 80%,
+      transparent 100%);
+    position: relative;
+  }
+  
+  .bohemian-divider::before,
+  .bohemian-divider::after {
+    content: '◆';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 8px;
+    top: -4px;
+  }
+  
+  .bohemian-divider::before {
+    left: -10px;
+  }
+  
+  .bohemian-divider::after {
+    right: -10px;
+  }
+  
+  .bohemian-card {
+    background: linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.9) 0%,
+      rgba(201, 168, 118, 0.05) 50%,
+      rgba(26, 26, 26, 0.9) 100%);
+    border: 1px solid rgba(201, 168, 118, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+  
+  .bohemian-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      rgba(201, 168, 118, 0.3),
+      rgba(139, 115, 85, 0.2),
+      rgba(212, 165, 116, 0.3));
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .bohemian-card:hover::before {
+    opacity: 1;
+  }
+  
+  .bohemian-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(201, 168, 118, 0.2);
+  }
+  
+  .bohemian-card-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bohemian-ornament-small {
+    width: 40px;
+    height: 6px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      rgba(201, 168, 118, 0.6) 50%,
+      transparent 100%);
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .bohemian-ornament-small::before,
+  .bohemian-ornament-small::after {
+    content: '✦';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 10px;
+    top: -7px;
+  }
+  
+  .bohemian-ornament-small::before {
+    left: -8px;
+  }
+  
+  .bohemian-ornament-small::after {
+    right: -8px;
+  }
+  
+  .bohemian-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, 
+      rgba(201, 168, 118, 0.2) 0%,
+      rgba(201, 168, 118, 0.1) 100%);
+    border: 1px solid rgba(201, 168, 118, 0.3);
+    color: var(--accent-1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Bohemian Story Styles */
+  .bohemian-story-bg {
+    background: linear-gradient(45deg,
+      rgba(10, 10, 10, 0.95) 0%,
+      rgba(26, 26, 26, 0.9) 25%,
+      rgba(201, 168, 118, 0.03) 50%,
+      rgba(26, 26, 26, 0.9) 75%,
+      rgba(10, 10, 10, 0.95) 100%);
+  }
+  
+  .bohemian-story-pattern {
+    background: 
+      repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201, 168, 118, 0.02) 60px, rgba(201, 168, 118, 0.02) 120px),
+      repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(139, 115, 85, 0.02) 60px, rgba(139, 115, 85, 0.02) 120px);
+  }
+  
+  .bohemian-story-ornament {
+    width: 60px;
+    height: 30px;
+    background: radial-gradient(ellipse, rgba(201, 168, 118, 0.4) 0%, transparent 70%);
+    position: relative;
+  }
+  
+  .bohemian-story-ornament::before {
+    content: '❋ ✦ ❋';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 14px;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 8px;
+  }
+  
+  .bohemian-script {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(201, 168, 118, 0.4);
+  }
+  
+  .bohemian-flourish-line {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg,
+      rgba(201, 168, 118, 0.8) 0%,
+      rgba(212, 165, 116, 0.6) 25%,
+      rgba(139, 115, 85, 0.4) 50%,
+      rgba(212, 165, 116, 0.6) 75%,
+      rgba(201, 168, 118, 0.8) 100%);
+    position: relative;
+  }
+  
+  .bohemian-flourish-line::before,
+  .bohemian-flourish-line::after {
+    content: '◆';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 12px;
+    top: -6px;
+  }
+  
+  .bohemian-flourish-line::before {
+    left: -15px;
+  }
+  
+  .bohemian-flourish-line::after {
+    right: -15px;
+  }
+  
+  .bohemian-quote-box {
+    background: linear-gradient(135deg, 
+      rgba(201, 168, 118, 0.05) 0%,
+      rgba(26, 26, 26, 0.8) 100%);
+    border-left: 3px solid rgba(201, 168, 118, 0.6);
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+    backdrop-filter: blur(5px);
+  }
+  
+  .bohemian-quote-marks {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 48px;
+    color: var(--accent-1);
+    opacity: 0.3;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .bohemian-quote-attribution {
+    text-align: right;
+    font-size: 14px;
+    color: var(--accent-1);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+  
+  .bohemian-signature-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bohemian-flourish-left,
+  .bohemian-flourish-right {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 118, 0.6) 100%);
+  }
+  
+  .bohemian-flourish-right {
+    background: linear-gradient(90deg, rgba(201, 168, 118, 0.6) 0%, transparent 100%);
+  }
+  
+  .bohemian-frame {
+    position: relative;
+    padding: 16px;
+    background: linear-gradient(135deg, 
+      rgba(139, 115, 85, 0.3) 0%,
+      rgba(201, 168, 118, 0.2) 25%,
+      rgba(212, 165, 116, 0.1) 50%,
+      rgba(201, 168, 118, 0.2) 75%,
+      rgba(139, 115, 85, 0.3) 100%);
+    border-radius: 16px;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(201, 168, 118, 0.2);
+  }
+  
+  .bohemian-photo-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 1;
+  }
+  
+  .bohemian-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(201, 168, 118, 0.1) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(139, 115, 85, 0.1) 100%
+    );
+  }
+  
+  .bohemian-frame-corners::before,
+  .bohemian-frame-corners::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-1);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+  
+  .bohemian-frame-corners::before {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .bohemian-frame-corners::after {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+  }
+  
+  .bohemian-floating-element {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  /* Bohemian Explorer Styles */
+  .bohemian-explorer-bg {
+    background: linear-gradient(135deg,
+      rgba(26, 26, 26, 0.95) 0%,
+      rgba(139, 115, 85, 0.1) 20%,
+      rgba(10, 10, 10, 0.9) 40%,
+      rgba(201, 168, 118, 0.05) 60%,
+      rgba(26, 26, 26, 0.95) 100%);
+  }
+  
+  .bohemian-explorer-pattern {
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(201, 168, 118, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 70% 70%, rgba(139, 115, 85, 0.06) 0%, transparent 60%),
+      repeating-conic-gradient(from 45deg at 50% 50%, transparent 0deg, rgba(201, 168, 118, 0.02) 60deg, transparent 120deg);
+    background-size: 200px 200px, 300px 300px, 150px 150px;
+  }
+  
+  .bohemian-compass {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+    border: 2px solid rgba(201, 168, 118, 0.4);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 168, 118, 0.1) 0%, transparent 70%);
+  }
+  
+  .bohemian-compass::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-1);
+    font-size: 24px;
+    animation: rotate-slow 20s linear infinite;
+  }
+  
+  .bohemian-compass::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 8px;
+    background: var(--accent-1);
+  }
+  
+  .bohemian-journey-divider {
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(201, 168, 118, 0.2) 10%,
+      rgba(201, 168, 118, 0.8) 30%,
+      rgba(212, 165, 116, 1) 50%,
+      rgba(201, 168, 118, 0.8) 70%,
+      rgba(201, 168, 118, 0.2) 90%,
+      transparent 100%);
+    position: relative;
+  }
+  
+  .bohemian-journey-divider::before,
+  .bohemian-journey-divider::after {
+    content: '◆';
+    position: absolute;
+    color: var(--accent-1);
+    font-size: 14px;
+    top: -8px;
+  }
+  
+  .bohemian-journey-divider::before {
+    left: -20px;
+  }
+  
+  .bohemian-journey-divider::after {
+    right: -20px;
+  }
+  
+  .bohemian-exploration-tile {
+    position: relative;
+    transition: all 0.5s ease;
+  }
+  
+  .bohemian-exploration-tile:hover {
+    transform: translateY(-10px);
+  }
+  
+  .bohemian-tile-ornament {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.9) 0%,
+      rgba(201, 168, 118, 0.1) 100%);
+    border: 1px solid rgba(201, 168, 118, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+  
+  /* Bohemian Logo Styles */
+  .bohemian-logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .bohemian-logo-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .bohemian-logo-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .bohemian-logo-elle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent-1);
+    text-shadow: 
+      0 0 10px rgba(201, 168, 118, 0.3),
+      0 0 20px rgba(201, 168, 118, 0.2);
+    letter-spacing: 2px;
+    line-height: 1;
+    background: linear-gradient(135deg, #f8f6f0 0%, #c9a876 50%, #d4a574 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .bohemian-logo-container:hover .bohemian-logo-elle {
+    text-shadow: 
+      0 0 15px rgba(201, 168, 118, 0.5),
+      0 0 25px rgba(201, 168, 118, 0.3);
+  }
+  
+  .bohemian-logo-subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2px;
+  }
+  
+  .bohemian-logo-restaurant,
+  .bohemian-logo-lounge {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--accent-1);
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    line-height: 1;
+  }
+  
+  .bohemian-logo-restaurant {
+    margin-bottom: 1px;
+  }
+  
+  .bohemian-logo-ornaments {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .bohemian-logo-flourish-left,
+  .bohemian-logo-flourish-right {
+    font-size: 12px;
+    color: var(--accent-1);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .bohemian-logo-flourish-left {
+    margin-left: -8px;
+    animation-delay: 0s;
+  }
+  
+  .bohemian-logo-flourish-right {
+    margin-right: -8px;
+    animation-delay: 3s;
+  }
+  
+  .bohemian-logo-container:hover .bohemian-logo-flourish-left,
+  .bohemian-logo-container:hover .bohemian-logo-flourish-right {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  
+  .modern-hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    background: linear-gradient(135deg, #f8f6f0 0%, #c9a876 30%, #f8f6f0 70%);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 6s ease-in-out infinite;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+  
+  .btn-modern-primary {
+    @apply relative px-10 py-4 bg-transparent border-2 border-accent-1 text-accent-1 font-medium tracking-wider uppercase transition-all duration-500 hover:text-brand-bg hover:shadow-2xl hover:shadow-accent-1/20 overflow-hidden backdrop-blur-sm;
+  }
+  
+  .btn-modern-secondary {
+    @apply flex items-center px-8 py-4 bg-transparent border border-accent-1/40 text-accent-1 font-light tracking-wide transition-all duration-300 hover:border-accent-1 hover:bg-accent-1/10 backdrop-blur-md rounded-full;
+  }
+  
+  .modern-info-strip {
+    @apply backdrop-blur-sm bg-brand-bg/40 border border-accent-1/20 rounded-full px-8 py-4 inline-block;
+  }
+
+  .luxury-border {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--brand-bg), var(--brand-bg)) padding-box,
+                linear-gradient(45deg, #c9a876, #8b7355, #d4a574) border-box;
+  }
+  
+  .text-reveal {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .text-reveal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-1);
+    animation: reveal 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .text-glow {
+    text-shadow: 
+      0 0 5px rgba(201, 168, 118, 0.5),
+      0 0 10px rgba(201, 168, 118, 0.3),
+      0 0 20px rgba(201, 168, 118, 0.1);
+  }
+  
+  .morphing-border {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 8s ease-in-out infinite;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 60px rgba(201, 168, 118, 0.2);
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.7; background-position: 0% 50%; }
+    50% { opacity: 1; background-position: 100% 50%; }
+  }
+  
+  @keyframes reveal {
+    to { width: 0%; }
+  }
+  
+  @keyframes morph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    50% { border-radius: 70% 30% 50% 60% / 30% 50% 60% 40%; }
+    75% { border-radius: 40% 70% 60% 30% / 70% 40% 50% 30%; }
+  }
+  
+  @keyframes titleShimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+  
+  @keyframes rotate-slow {
+    0% { transform: rotate(45deg); }
+    100% { transform: rotate(405deg); }
+  }
+  
+  @keyframes slide-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fade-in-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes borderPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+  }
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-1);
+  color: var(--btn-text);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Mobile menu animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+  
+  h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+  
+  h3 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+}

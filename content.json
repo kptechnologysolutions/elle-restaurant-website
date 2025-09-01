@@ -1,0 +1,79 @@
+{
+  "business": {
+    "name": "Elle Restaurant & Lounge",
+    "tagline": "Northern Italian & French Cuisine",
+    "phone": "+1-440-656-3553",
+    "phoneDisplay": "(440) 656-3553",
+    "address": {
+      "street": "33730 Bainbridge Rd",
+      "suite": "",
+      "city": "Solon", 
+      "state": "OH",
+      "zip": "44139",
+      "full": "33730 Bainbridge Rd, Solon, OH 44139",
+      "neighborhood": "Solon"
+    },
+    "hours": {
+      "display": "Tue–Thu: 4pm–9pm, Fri: 4pm–10pm, Sat: 5pm–10pm",
+      "structured": {
+        "monday": { "open": "", "close": "", "closed": true },
+        "tuesday": { "open": "16:00", "close": "21:00" },
+        "wednesday": { "open": "16:00", "close": "21:00" },
+        "thursday": { "open": "16:00", "close": "21:00" },
+        "friday": { "open": "16:00", "close": "22:00" },
+        "saturday": { "open": "17:00", "close": "22:00" },
+        "sunday": { "open": "", "close": "", "closed": true }
+      }
+    },
+    "cuisine": "Northern Italian & French",
+    "priceRange": "$$$"
+  },
+  "marketing": {
+    "mailchimpURL": "https://mailchi.mp/xxxx/xxxx",
+    "email": "info@ellecle.com",
+    "socialMedia": {
+      "instagram": "https://instagram.com/ellerestaruantlounge",
+      "facebook": "https://facebook.com/ellerestaruantlounge"
+    }
+  },
+  "menus": {
+    "foodPDF": "/menu.pdf",
+    "cocktailPDF": "/cocktail-menu.pdf",
+    "winePDF": "/wine-list.pdf"
+  },
+  "images": {
+    "logo": "/images/elle-logo.svg",
+    "hero": "/images/elle-bohemian-woman-art.png",
+    "menuTile": "/images/elle8.jpg",
+    "drinksTile": "/images/elle10.jpg",
+    "about": {
+      "bar1": "/images/elle6.jpg",
+      "bar2": "/images/elle2.jpg",
+      "kitchen": "/images/elle4.jpg"
+    },
+    "gallery": [
+      "/images/elle2.jpg",
+      "/images/elle4.jpg", 
+      "/images/elle6.jpg",
+      "/images/elle8.jpg",
+      "/images/elle10.jpg",
+      "/images/elle14.jpg",
+      "/images/elle23422.jpg",
+      "/images/elletable.jpg",
+      "/images/473969906_647032224412852_4617541937381133515_n.jpg",
+      "/images/473998055_647032177746190_5977500821385898902_n.jpg",
+      "/images/474081190_647032197746188_3947260070687231680_n.jpg",
+      "/images/474262271_647032337746174_7880046345788540048_n.jpg"
+    ]
+  },
+  "seo": {
+    "siteName": "Elle Restaurant & Lounge",
+    "description": "Elle Restaurant & Lounge in Solon, OH serves from-scratch Northern Italian & French Mediterranean cuisine by Chef Patrick Capuozzo. Featuring craft cocktails, happy hour specials, Bohemian chic atmosphere, and signature dishes like Portuguese mussels and Elle burger. Reservations: (440) 656-3553",
+    "keywords": ["Elle Restaurant Solon", "Northern Italian restaurant Ohio", "French cuisine Cleveland area", "Chef Patrick Capuozzo", "Mediterranean dining Solon", "craft cocktails Ohio", "happy hour Solon", "from scratch cooking", "Portuguese mussels", "Elle burger", "gluten-free dining", "vegan options", "Bohemian chic restaurant", "fine dining Solon", "Michael Symon chef", "private dining", "catering Solon", "wine bar Ohio", "date night restaurant"],
+    "ogImage": "/images/elle-bohemian-woman-art.png"
+  },
+  "legal": {
+    "privacyPolicy": "/privacy-policy",
+    "designCredit": "Design by My Agency"
+  }
+}
