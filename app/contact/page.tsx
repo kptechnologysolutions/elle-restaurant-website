@@ -150,7 +150,7 @@ export default function ContactPage() {
               </div>
               
               <div className="flex justify-center">
-                <OpenTableWidget width={280} height={500} />
+                <OpenTableWidget width={320} height={650} />
               </div>
             </div>
 

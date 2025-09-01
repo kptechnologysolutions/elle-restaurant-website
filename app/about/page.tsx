@@ -11,71 +11,61 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-brand-bg">
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden bg-secondary-bg/30">
-        {/* Decorative Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute left-0 top-0 w-full h-full">
-            {/* Left side decorative elements */}
-            <div className="absolute left-8 top-1/4 w-32 h-32 border-2 border-accent-1/30 rounded-full"></div>
-            <div className="absolute left-16 top-1/2 w-16 h-16 border border-accent-warm/30 rotate-45"></div>
-            <div className="absolute left-4 bottom-1/4 w-24 h-24 border-2 border-accent-1/20 rotate-12"></div>
+      <section className="relative min-h-[600px] overflow-hidden bg-secondary-bg/30">
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
             
-            {/* Right side decorative elements */}
-            <div className="absolute right-8 top-1/3 w-28 h-28 border-2 border-accent-warm/30 rounded-full"></div>
-            <div className="absolute right-12 top-2/3 w-20 h-20 border border-accent-1/30 rotate-45"></div>
-            <div className="absolute right-6 bottom-1/3 w-16 h-16 border-2 border-accent-warm/20 rotate-12"></div>
-            
-            {/* Floating ornamental elements */}
-            <div className="absolute left-1/4 top-1/6 text-accent-1/20 text-4xl">✦</div>
-            <div className="absolute right-1/4 bottom-1/6 text-accent-warm/20 text-3xl">❋</div>
-            <div className="absolute left-1/3 bottom-1/5 text-accent-1/15 text-5xl">◊</div>
-            <div className="absolute right-1/3 top-1/5 text-accent-warm/15 text-4xl">✧</div>
+            {/* Left side - Text Content */}
+            <div className="order-2 lg:order-1 text-center lg:text-left">
+              <div className="mb-6 mx-auto lg:mx-0 w-16 h-16 flex items-center justify-center border-2 border-accent-1 rounded-full bg-accent-1/10">
+                <div className="text-accent-1 text-xl">✦</div>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-display font-light text-ink mb-4">
+                About <span className="text-accent-1 font-thin italic">Elle</span>
+              </h1>
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-accent-1 to-transparent mx-auto lg:mx-0 mb-6"></div>
+              <p className="text-xl text-muted-ink leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Honoring all that is maternal, womanly, and goddess-like through exceptional Mediterranean cuisine in our Bohemian sanctuary.
+              </p>
+            </div>
+
+            {/* Right side - Bohemian Painting */}
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="relative w-80 h-80">
+                {/* Ornate frame effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-1/20 to-accent-warm/20 rounded-lg transform rotate-1"></div>
+                <div className="absolute inset-2 bg-gradient-to-tl from-accent-warm/15 to-accent-1/15 rounded-lg transform -rotate-1"></div>
+                
+                {/* Main painting with proper positioning */}
+                <div className="absolute inset-4 rounded-lg overflow-hidden border-4 border-accent-1/40 shadow-2xl">
+                  <Image
+                    src="/images/elle-bohemian-woman-art.png"
+                    alt="Elle Restaurant bohemian woman artwork"
+                    width={320}
+                    height={320}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                </div>
+                
+                {/* Corner ornaments */}
+                <div className="absolute -top-4 -left-4 text-accent-1 text-3xl opacity-80">✦</div>
+                <div className="absolute -top-4 -right-4 text-accent-warm text-3xl opacity-80">✦</div>
+                <div className="absolute -bottom-4 -left-4 text-accent-warm text-3xl opacity-80">✦</div>
+                <div className="absolute -bottom-4 -right-4 text-accent-1 text-3xl opacity-80">✦</div>
+              </div>
+            </div>
+
           </div>
         </div>
-        
-        {/* Central Painting */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-80 h-80">
-            {/* Ornate frame effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-1/20 to-accent-warm/20 rounded-lg transform rotate-1"></div>
-            <div className="absolute inset-2 bg-gradient-to-tl from-accent-warm/15 to-accent-1/15 rounded-lg transform -rotate-1"></div>
-            
-            {/* Main painting */}
-            <div className="relative inset-4 rounded-lg overflow-hidden border-4 border-accent-1/40 shadow-2xl">
-              <Image
-                src="/images/elle-bohemian-woman-art.png"
-                alt="Elle Restaurant bohemian woman artwork"
-                width={320}
-                height={320}
-                className="object-cover w-full h-full"
-                priority
-              />
-              {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-            </div>
-            
-            {/* Corner ornaments */}
-            <div className="absolute -top-4 -left-4 text-accent-1 text-3xl opacity-80">✦</div>
-            <div className="absolute -top-4 -right-4 text-accent-warm text-3xl opacity-80">✦</div>
-            <div className="absolute -bottom-4 -left-4 text-accent-warm text-3xl opacity-80">✦</div>
-            <div className="absolute -bottom-4 -right-4 text-accent-1 text-3xl opacity-80">✦</div>
-          </div>
-        </div>
-        
-        {/* Text Overlay */}
-        <div className="relative z-10 h-full flex items-end justify-center pb-12">
-          <div className="text-center bg-black/60 backdrop-blur-sm p-8 rounded-lg max-w-2xl mx-6">
-            <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center border-2 border-accent-1 rounded-full bg-black/30 backdrop-blur-sm">
-              <div className="text-accent-1 text-xl">✦</div>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-display font-light text-white mb-3">
-              About <span className="text-accent-1 font-thin italic">Elle</span>
-            </h1>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-accent-1 to-transparent mx-auto mb-4"></div>
-            <p className="text-lg text-white/90">
-              Honoring all that is maternal, womanly, and goddess-like through exceptional Mediterranean cuisine
-            </p>
-          </div>
+
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute left-8 top-1/4 w-32 h-32 border-2 border-accent-1/30 rounded-full"></div>
+          <div className="absolute right-8 top-1/3 w-28 h-28 border-2 border-accent-warm/30 rounded-full"></div>
+          <div className="absolute left-1/4 bottom-1/6 text-accent-1/20 text-6xl">✦</div>
+          <div className="absolute right-1/4 top-1/6 text-accent-warm/20 text-5xl">❋</div>
         </div>
       </section>
 
