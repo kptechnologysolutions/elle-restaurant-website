@@ -43,8 +43,8 @@ export default function HomePage() {
       {/* Bohemian Artisan Creations */}
       <section className="py-s-24 bohemian-tapestry relative overflow-hidden">
         <div className="absolute inset-0 bohemian-pattern opacity-10"></div>
-        <div className="absolute top-8 left-8 text-6xl text-accent-1/20 font-display rotate-12 hidden lg:block">❋</div>
-        <div className="absolute bottom-12 right-12 text-8xl text-accent-warm/15 font-display -rotate-6 hidden lg:block">✦</div>
+        <div className="absolute top-8 left-8 text-6xl text-accent-1/20 font-display rotate-12 hidden lg:block">🍇</div>
+        <div className="absolute bottom-12 right-12 text-8xl text-accent-warm/15 font-display -rotate-6 hidden lg:block">🌿</div>
         
         <div className="max-w-6xl mx-auto px-s-6 relative z-10">
           <div className="text-center mb-s-16">
@@ -203,7 +203,7 @@ export default function HomePage() {
                   <div className="text-4xl text-accent-1 animate-float">🎨</div>
                 </div>
                 <div className="absolute -top-6 -right-6 bohemian-floating-element" style={{animationDelay: '1s'}}>
-                  <div className="text-3xl text-accent-warm animate-float">✦</div>
+                  <div className="text-3xl text-accent-warm animate-float">🌿</div>
                 </div>
               </div>
             </div>

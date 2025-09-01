@@ -18,7 +18,7 @@ export default function AboutPage() {
             {/* Left side - Text Content */}
             <div className="order-2 lg:order-1 text-center lg:text-left">
               <div className="mb-6 mx-auto lg:mx-0 w-16 h-16 flex items-center justify-center border-2 border-accent-1 rounded-full bg-accent-1/10">
-                <div className="text-accent-1 text-xl">✦</div>
+                <div className="text-accent-1 text-xl">🍃</div>
               </div>
               <h1 className="text-5xl md:text-6xl font-display font-light text-ink mb-4">
                 About <span className="text-accent-1 font-thin italic">Elle</span>
@@ -50,10 +50,10 @@ export default function AboutPage() {
                 </div>
                 
                 {/* Corner ornaments */}
-                <div className="absolute -top-4 -left-4 text-accent-1 text-3xl opacity-80">✦</div>
-                <div className="absolute -top-4 -right-4 text-accent-warm text-3xl opacity-80">✦</div>
-                <div className="absolute -bottom-4 -left-4 text-accent-warm text-3xl opacity-80">✦</div>
-                <div className="absolute -bottom-4 -right-4 text-accent-1 text-3xl opacity-80">✦</div>
+                <div className="absolute -top-4 -left-4 text-accent-1 text-2xl opacity-80">🌿</div>
+                <div className="absolute -top-4 -right-4 text-accent-warm text-2xl opacity-80">🍇</div>
+                <div className="absolute -bottom-4 -left-4 text-accent-warm text-2xl opacity-80">🫒</div>
+                <div className="absolute -bottom-4 -right-4 text-accent-1 text-2xl opacity-80">🌱</div>
               </div>
             </div>
 
@@ -64,8 +64,8 @@ export default function AboutPage() {
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute left-8 top-1/4 w-32 h-32 border-2 border-accent-1/30 rounded-full"></div>
           <div className="absolute right-8 top-1/3 w-28 h-28 border-2 border-accent-warm/30 rounded-full"></div>
-          <div className="absolute left-1/4 bottom-1/6 text-accent-1/20 text-6xl">✦</div>
-          <div className="absolute right-1/4 top-1/6 text-accent-warm/20 text-5xl">❋</div>
+          <div className="absolute left-1/4 bottom-1/6 text-accent-1/20 text-4xl">🍷</div>
+          <div className="absolute right-1/4 top-1/6 text-accent-warm/20 text-4xl">🫒</div>
         </div>
       </section>
 

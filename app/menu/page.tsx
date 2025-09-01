@@ -100,7 +100,7 @@ export default function MenuPage() {
         <div className="relative z-10 h-full flex items-center justify-center text-center">
           <div className="max-w-4xl px-6">
             <div className="mb-6 mx-auto w-20 h-20 flex items-center justify-center border-2 border-accent-1 rounded-full bg-black/30 backdrop-blur-sm">
-              <div className="text-accent-1 text-2xl">✦</div>
+              <div className="text-accent-1 text-2xl">🌿</div>
             </div>
             <h1 className="text-5xl md:text-6xl font-display font-light text-white mb-4">
               Our <span className="text-accent-1 font-thin italic">Menu</span>
