@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import HeaderNav from '@/components/HeaderNav';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import contentData from '@/content.json';
 
 const navLinks = [
@@ -18,9 +19,9 @@ export const metadata: Metadata = {
     default: 'Elle Restaurant & Lounge | Award-Winning Northern Italian & French Cuisine in Solon, OH',
     template: '%s | Elle Restaurant & Lounge - Solon, OH'
   },
-  description: '⭐ Best Restaurant Solon 2024! Experience Chef Patrick Capuozzo\'s award-winning Northern Italian & French cuisine. From-scratch pasta, Portuguese mussels, craft cocktails & Bohemian chic atmosphere. Happy Hour specials! Reserve: (440) 656-3553',
+  description: '⭐ Best Restaurant Solon 2024! Experience our award-winning Northern Italian & French cuisine. From-scratch pasta, Portuguese mussels, craft cocktails & Bohemian chic atmosphere. Happy Hour specials! Reserve: (440) 656-3553',
   keywords: [
-    'Elle Restaurant Solon', 'best restaurant Solon Ohio', 'Northern Italian restaurant Cleveland', 'French cuisine Solon', 'Chef Patrick Capuozzo', 'Mediterranean dining Cleveland area', 'Portuguese mussels Solon', 'Elle burger Solon', 'craft cocktails Ohio', 'happy hour Solon', 'fine dining Cleveland suburbs', 'romantic dinner Solon', 'date night restaurant Ohio', 'from scratch cooking Solon', 'wine bar Solon', 'Italian pasta Cleveland', 'French restaurant Ohio', 'Bohemian restaurant', 'Michael Symon trained chef', 'gluten-free dining Solon', 'vegan options Cleveland', 'private dining Solon', 'catering Solon Ohio', 'business lunch Solon', 'special occasion dining', 'artisan food Cleveland', 'farm to table Solon', 'seasonal menu Ohio', 'wine pairing dinner', 'Cleveland fine dining'
+    'Elle Restaurant Solon', 'best restaurant Solon Ohio', 'Northern Italian restaurant Cleveland', 'French cuisine Solon', 'award winning restaurant Solon', 'Mediterranean dining Cleveland area', 'Portuguese mussels Solon', 'Elle burger Solon', 'craft cocktails Ohio', 'happy hour Solon', 'fine dining Cleveland suburbs', 'romantic dinner Solon', 'date night restaurant Ohio', 'from scratch cooking Solon', 'wine bar Solon', 'Italian pasta Cleveland', 'French restaurant Ohio', 'Bohemian restaurant', 'top rated Solon restaurant', 'gluten-free dining Solon', 'vegan options Cleveland', 'private dining Solon', 'catering Solon Ohio', 'business lunch Solon', 'special occasion dining', 'artisan food Cleveland', 'farm to table Solon', 'seasonal menu Ohio', 'wine pairing dinner', 'Cleveland fine dining'
   ].join(', '),
   authors: [{ name: 'Elle Restaurant & Lounge' }],
   creator: 'Elle Restaurant & Lounge',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Elle Restaurant & Lounge | Award-Winning Northern Italian & French Cuisine in Solon, OH',
-    description: '⭐ Solon\'s #1 Restaurant! Chef Patrick Capuozzo\'s from-scratch Northern Italian & French cuisine. Portuguese mussels, handcrafted pasta, legendary Elle burger. Happy Hour Tue-Thu 4-6pm, Fri 4-5pm. Reserve now!',
+    description: '⭐ Solon\'s #1 Restaurant! Award-winning from-scratch Northern Italian & French cuisine. Portuguese mussels, handcrafted pasta, legendary Elle burger. Happy Hour Tue-Thu 4-6pm, Fri 4-5pm. Reserve now!',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.ellecle.com',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Elle Restaurant & Lounge | Award-Winning Italian & French in Solon',
-    description: '⭐ Solon\'s #1 Restaurant! From-scratch Mediterranean cuisine by Chef Patrick Capuozzo. Portuguese mussels, craft cocktails, Bohemian chic atmosphere.',
+    description: '⭐ Solon\'s #1 Restaurant! From-scratch Mediterranean cuisine from our award-winning kitchen. Portuguese mussels, craft cocktails, Bohemian chic atmosphere.',
     images: ['/images/elle-bohemian-woman-art.png'],
     creator: '@ellerestaruantlounge',
   },
@@ -77,7 +78,7 @@ const jsonLd = [
     '@id': 'https://www.ellecle.com/#restaurant',
     name: 'Elle Restaurant & Lounge',
     alternateName: ['Elle Solon', 'Elle Restaurant', 'Elle Lounge'],
-    description: 'Award-winning Northern Italian & French cuisine restaurant in Solon, Ohio, featuring from-scratch Mediterranean-inspired dishes by Chef Patrick Capuozzo in an elegant Bohemian chic atmosphere. Winner: Best Restaurant Solon 2024.',
+    description: 'Award-winning Northern Italian & French cuisine restaurant in Solon, Ohio, featuring from-scratch Mediterranean-inspired dishes from our exceptional culinary team in an elegant Bohemian chic atmosphere. Winner: Best Restaurant Solon 2024.',
     image: [
       'https://www.ellecle.com/images/elle-bohemian-woman-art.png',
       'https://www.ellecle.com/images/elle-food-plating.jpg',
@@ -88,8 +89,7 @@ const jsonLd = [
     email: 'info@ellecle.com',
     url: 'https://www.ellecle.com',
     sameAs: [
-      'https://instagram.com/ellerestaruantlounge',
-      'https://facebook.com/ellerestaruantlounge',
+      'https://www.facebook.com/ELLErestaurantandlounge',
       'https://www.yelp.com/biz/elle-restaurant-solon',
       'https://www.opentable.com/elle-restaurant-solon'
     ],
@@ -160,7 +160,7 @@ const jsonLd = [
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Sarah M.' },
         reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: 'Chef Patrick\'s Portuguese mussels are absolutely divine! The wine reduction is perfect and the atmosphere is so romantic.',
+        reviewBody: 'The Portuguese mussels are absolutely divine! The wine reduction is perfect and the atmosphere is so romantic.',
         datePublished: '2024-08-15'
       },
       {
@@ -177,11 +177,11 @@ const jsonLd = [
     ],
     employee: {
       '@type': 'Person',
-      name: 'Patrick Capuozzo',
-      jobTitle: 'Executive Chef',
+      name: 'Elle Culinary Team',
+      jobTitle: 'Award-Winning Kitchen',
       alumniOf: 'Michael Symon Restaurant Group',
       knowsAbout: ['Northern Italian Cuisine', 'French Cooking', 'Mediterranean Flavors'],
-      award: 'Trained under Celebrity Chef Michael Symon'
+      award: 'Award-winning Mediterranean Cuisine'
     },
     amenityFeature: [
       { '@type': 'LocationFeatureSpecification', name: 'Private Dining', value: true },
@@ -241,6 +241,8 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body">
+        {/* Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID */}
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-XXXXXXXXXX" />
         <HeaderNav 
           logo="Elle Restaurant & Lounge" 
           logoImage={contentData.images.logo}
@@ -254,6 +256,7 @@ export default function RootLayout({
           hours={['Tue–Thu: 4pm–9pm', 'Fri: 4pm–10pm', 'Sat: 5pm–10pm', 'Closed Mon & Sun']}
           privacyHref="/privacy-policy"
           creditText="Design by 56 Restaurant Group"
+          socialLinks={contentData.marketing.socialMedia}
         />
       </body>
     </html>

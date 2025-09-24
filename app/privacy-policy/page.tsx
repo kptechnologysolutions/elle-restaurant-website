@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this privacy policy or how we handle your information, please contact us at:
           </p>
           <div className="text-btn-text">
-            <p>Phone: <a href="tel:+1-000-000-0000" className="text-accent-1">(000) 000-0000</a></p>
+            <p>Phone: <a href="tel:+1-440-656-3553" className="text-accent-1">(440) 656-3553</a></p>
             <p>Address: 27975 Old 41 Rd, Suite 104, Bonita Springs, FL 34135</p>
           </div>
         </div>

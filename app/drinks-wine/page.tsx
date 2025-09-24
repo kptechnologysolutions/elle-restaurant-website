@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import contentData from '@/content.json';
+import ReservationWidget from '@/components/ReservationWidget';
+import OnlineOrdering from '@/components/OnlineOrdering';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -231,7 +233,7 @@ export default function DrinksWinePage() {
             </div>
             <h3 className="text-2xl font-display text-accent-1 mb-4">Happy Hour Specials</h3>
             <p className="text-ink max-w-2xl mx-auto mb-6">
-              Join us Tuesday through Thursday from 4:00pm to 6:00pm for special pricing on select wines and cocktails.
+              Join us for Happy Hour! Tuesday through Thursday from 4:00pm to 6:00pm, and Friday from 4:00pm to 5:00pm for special pricing on select wines and cocktails.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-sm">
               <div className="bg-white/50 p-4 rounded">
@@ -258,16 +260,12 @@ export default function DrinksWinePage() {
           <p className="text-lg text-ink mb-8">
             Let our knowledgeable staff help you find the perfect wine or cocktail to complement your dining experience
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${contentData.business.phone}`}
-              className="bg-accent-1 hover:bg-accent-warm text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Reserve Your Table
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <ReservationWidget />
+            <OnlineOrdering />
             <a
               href="/menu"
-              className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"
+              className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-6 py-3 rounded-full font-medium transition-all duration-300"
             >
               View Food Menu
             </a>

@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import contentData from '@/content.json';
+import ReservationWidget from '@/components/ReservationWidget';
+import OnlineOrdering from '@/components/OnlineOrdering';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Menu | Elle Restaurant & Lounge',
-  description: 'Experience Chef Giovanni Casola\'s Mediterranean-inspired cuisine featuring the freshest seasonal ingredients, prepared from scratch with love.',
+  description: 'Experience our award-winning Mediterranean-inspired cuisine featuring the freshest seasonal ingredients, prepared from scratch with love by our exceptional culinary team.',
 };
 
 const menuSections = [
@@ -12,16 +14,15 @@ const menuSections = [
     title: "Starters",
     subtitle: "~ Begin Your Journey ~",
     items: [
-      { name: "Artisan Bread Plate", description: "Assorted Italian breads, honey butter, white bean dip", price: "6" },
-      { name: "House Soup", description: "Daily selection", price: "MP" },
-      { name: "Warm Olives", description: "Fennel, oregano, chili flakes", price: "8" },
       { name: "Green Goddess Hummus", description: "Lemon oil, pickled vegetable, crispy pita", price: "12" },
-      { name: "Roasted Apple Brussels", description: "Roasted Ohio apples, sage, citrus honey, whipped parmesan", price: "14" },
-      { name: "Mussels di Zoppa", description: "PEI mussels, linguica sausage, roasted tomato broth, fresh herbs, lemon, toasted ciabatta with pesto", price: "16" },
-      { name: "Calamari Fritti", description: "Spicy cherry peppers, yuzu aioli, parsley, lemon wedge", price: "18" },
+      { name: "Roasted Apple Brussels", description: "Roasted Ohio apples, sage, citrus honey, whipped parmesan", price: "13" },
       { name: "Lamb Meatballs", description: "Za'atar ricotta, pomegranate gastrique, fresh mint", price: "15" },
-      { name: "Burrata Tuscany", description: "Basil pesto, roasted red peppers, pine nuts, pomegranate balsamic, roasted tomatoes, grilled ciabatta", price: "14" },
-      { name: "Beef Carpaccio", description: "Capers, shaved parmesan, lemon oil, basil, sea salt, mustard aioli", price: "16" }
+      { name: "Calamari Fritti", description: "Spicy cherry peppers, yuzu aioli, parsley, lemon wedge", price: "18" },
+      { name: "Mussels di Zoppa", description: "PEI mussels, linguica sausage, roasted tomato broth, fresh herbs, lemon, toasted ciabatta with pesto", price: "16" },
+      { name: "Beef Carpaccio", description: "Capers, shaved parmesan, lemon oil, basil, sea salt, mustard aioli", price: "16" },
+      { name: "House Soup", description: "Daily selection", price: "MP" },
+      { name: "Artisan Bread Plate", description: "Assorted Italian breads, honey butter, white bean dip", price: "6" },
+      { name: "Burrata Tuscany", description: "Basil pesto, roasted red peppers, pine nuts, pomegranate balsamic, roasted tomatoes, grilled ciabatta", price: "14" }
     ]
   },
   {
@@ -29,23 +30,23 @@ const menuSections = [
     subtitle: "~ Fresh & Vibrant ~",
     addOns: "Add to any salad: chicken | prosciutto | salmon",
     items: [
-      { name: "Elle", description: "Local greens, cucumber, carrot, grape tomato, banana peppers, croutons, Italian vinaigrette", price: "8/14" },
-      { name: "Classic Caesar", description: "Romaine, torn crouton, pecorino, Elle signature Caesar dressing", price: "8/14" },
-      { name: "Grape & Pistachio", description: "Spinach, candied pistachio, purple grapes, orange segments, brie, creamy Greek vinaigrette", price: "9/15" }
+      { name: "Elle", description: "Local greens, cucumber, carrot, grape tomato, banana peppers, croutons, Italian vinaigrette", price: "14" },
+      { name: "Classic Caesar", description: "Romaine, torn crouton, pecorino, Elle signature Caesar dressing", price: "14" },
+      { name: "Grape & Pistachio", description: "Spinach, candied pistachio, purple grapes, orange segments, brie, creamy Greek vinaigrette", price: "15" }
     ]
   },
   {
     title: "Mains",
     subtitle: "~ The Heart of Our Kitchen ~",
+    addOns: "Add a side Elle or Caesar salad 7",
     items: [
       { name: "Eggplant Lasagna", description: "Whipped ricotta, pomodoro sauce, mozzarella, fresh oregano, parmesan", price: "26", dietary: ["vegetarian"] },
-      { name: "Faroe Island Salmon", description: "Pan-seared, braised farro, cauliflower velouté, sugar snap peas, olive tapenade", price: "32" },
+      { name: "Faroe Island Salmon", description: "Ratatouille, potato coins, cauliflower velouté, olive tapenade", price: "30" },
       { name: "Lobster Oreganata", description: "Buttery garlic and herb crusted lobster tail, citrus and saffron risotto, asparagus", price: "42" },
-      { name: "Bone-in Pork Chop", description: "24 hour brined 14 oz pork chop, celery mash, chili-garlic fennel, miso butter", price: "36" },
+      { name: "Bone-in Pork Chop", description: "24 hour brined 14 oz pork chop, truffle mash, rappini, miso butter", price: "36" },
       { name: "Prime NY Strip Steak", description: "12 oz prime strip, black garlic butter, frites", price: "49" },
       { name: "Sicilian Caponata", description: "Sweet and sour eggplant, fennel, golden raisins, cannellini beans, port agrodolce, cashew ricotta, aquafaba aioli, grilled ciabatta", price: "26", dietary: ["vegan"] },
       { name: "Scallop and Lemon Gnocchi", description: "Beurre citron, fava beans, spinach, red peppers", price: "40" },
-      { name: "Grilled Branzino", description: "Stuffed with fig & walnut filling, almond romesco, toasted pastina, pomegranate seeds", price: "42" },
       { name: "Chicken Caprese Sandwich", description: "Basil pesto, mozzarella, heirloom tomato, arugula, balsamic marinated chicken, toasted ciabatta, frites", price: "19" },
       { name: "Chicken Piccata", description: "Chicken breast, broccolini, roasted fingerlings, caramelized lemon, capers", price: "30" },
       { name: "Veal Bolognese", description: "Fresh pappardelle, spinach, smoked tomato, ricotta, ground local veal", price: "29" },
@@ -107,7 +108,7 @@ export default function MenuPage() {
             </h1>
             <div className="w-32 h-px bg-gradient-to-r from-transparent via-accent-1 to-transparent mx-auto mb-6"></div>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Mediterranean-inspired cuisine featuring the freshest seasonal ingredients, prepared from scratch with love by Executive Chef Giovanni Casola
+              Mediterranean-inspired cuisine featuring the freshest seasonal ingredients, prepared from scratch with love by our award-winning culinary team
             </p>
           </div>
         </div>
@@ -224,7 +225,7 @@ export default function MenuPage() {
                 <p className="accent-text text-xl italic leading-relaxed mb-4">
                   Every dish is crafted with the finest seasonal ingredients, honoring traditional Mediterranean techniques while embracing creative innovation. We believe in making everything from scratch with love.
                 </p>
-                <div className="bohemian-quote-attribution">~ Executive Chef Giovanni Casola</div>
+                <div className="bohemian-quote-attribution">~ Elle Culinary Team</div>
               </div>
             </div>
           </div>
@@ -259,16 +260,12 @@ export default function MenuPage() {
           <p className="text-lg text-ink mb-8">
             Reserve your table today and embark on a culinary journey through the Mediterranean
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${contentData.business.phone}`}
-              className="bg-accent-1 hover:bg-accent-warm text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Reserve Your Table
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <ReservationWidget />
+            <OnlineOrdering />
             <a
               href="/"
-              className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"
+              className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-6 py-3 rounded-full font-medium transition-all duration-300"
             >
               Back to Home
             </a>

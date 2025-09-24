@@ -9,9 +9,9 @@ interface ImageGridProps {
 
 export default function ImageGrid({ images }: ImageGridProps) {
   return (
-    <section className="py-s-24">
-      <div className="max-w-7xl mx-auto px-s-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-s-6">
+    <section className="py-s-12 md:py-s-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-s-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-s-6">
           {images.map((image, index) => (
             <div 
               key={index} 

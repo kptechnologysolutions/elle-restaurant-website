@@ -32,8 +32,7 @@
     "mailchimpURL": "https://mailchi.mp/xxxx/xxxx",
     "email": "info@ellecle.com",
     "socialMedia": {
-      "instagram": "https://instagram.com/ellerestaruantlounge",
-      "facebook": "https://facebook.com/ellerestaruantlounge"
+      "facebook": "https://www.facebook.com/ELLErestaurantandlounge"
     }
   },
   "menus": {
@@ -49,7 +48,7 @@
     "about": {
       "bar1": "/images/elle6.jpg",
       "bar2": "/images/elle2.jpg",
-      "kitchen": "/images/elle4.jpg"
+      "kitchen": "/images/elle10.jpg"
     },
     "gallery": [
       "/images/elle2.jpg",
@@ -68,8 +67,8 @@
   },
   "seo": {
     "siteName": "Elle Restaurant & Lounge",
-    "description": "Elle Restaurant & Lounge in Solon, OH serves from-scratch Northern Italian & French Mediterranean cuisine by Chef Patrick Capuozzo. Featuring craft cocktails, happy hour specials, Bohemian chic atmosphere, and signature dishes like Portuguese mussels and Elle burger. Reservations: (440) 656-3553",
-    "keywords": ["Elle Restaurant Solon", "Northern Italian restaurant Ohio", "French cuisine Cleveland area", "Chef Patrick Capuozzo", "Mediterranean dining Solon", "craft cocktails Ohio", "happy hour Solon", "from scratch cooking", "Portuguese mussels", "Elle burger", "gluten-free dining", "vegan options", "Bohemian chic restaurant", "fine dining Solon", "Michael Symon chef", "private dining", "catering Solon", "wine bar Ohio", "date night restaurant"],
+    "description": "Elle Restaurant & Lounge in Solon, OH serves from-scratch Northern Italian & French Mediterranean cuisine. Award-winning kitchen featuring craft cocktails, happy hour specials, Bohemian chic atmosphere, and signature dishes like Portuguese mussels and Elle burger. Reservations: (440) 656-3553",
+    "keywords": ["Elle Restaurant Solon", "Northern Italian restaurant Ohio", "French cuisine Cleveland area", "best restaurant Solon", "Mediterranean dining Solon", "craft cocktails Ohio", "happy hour Solon", "from scratch cooking", "Portuguese mussels", "Elle burger", "gluten-free dining", "vegan options", "Bohemian chic restaurant", "fine dining Solon", "award winning restaurant", "private dining", "catering Solon", "wine bar Ohio", "date night restaurant"],
     "ogImage": "/images/elle-bohemian-woman-art.png"
   },
   "legal": {

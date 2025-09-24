@@ -1,15 +1,16 @@
+import contentData from '@/content.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Join BOHO Community | My Restaurant',
-  description: 'Join our community for exclusive updates, special events, and early access to new menu items.',
+  title: 'Join Our Community | Elle Restaurant & Lounge',
+  description: 'Join the Elle community for exclusive updates, special events, and early access to seasonal menus.',
 };
 
 export default function JoinBohoPage() {
   return (
     <div className="py-s-24 bg-accent-2 min-h-screen">
       <div className="max-w-4xl mx-auto px-s-6 text-center">
-        <h1 className="text-h1 mb-s-12 text-ink">Join the BOHO Community</h1>
+        <h1 className="text-h1 mb-s-12 text-ink">Join the Elle Community</h1>
         
         <p className="text-xl text-ink opacity-90 mb-s-16 max-w-2xl mx-auto">
           Become part of our growing community and enjoy exclusive perks, special access, and insider updates.
@@ -50,7 +51,7 @@ export default function JoinBohoPage() {
           </p>
           
           <a
-            href="https://mailchi.mp/xxxx/xxxx"
+            href={contentData.marketing.mailchimpURL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-ink text-accent-2 px-s-12 py-s-5 font-semibold uppercase tracking-wider text-lg hover:bg-accent-1 hover:text-btn-text transition-all duration-300 inline-block"

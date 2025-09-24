@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import contentData from '@/content.json';
+import ReservationWidget from '@/components/ReservationWidget';
+import OnlineOrdering from '@/components/OnlineOrdering';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -99,8 +101,8 @@ export default function AboutPage() {
                 <div className="bohemian-frame">
                   <div className="bohemian-photo-wrapper">
                     <Image 
-                      src="/images/elle2.jpg" 
-                      alt="Elle Restaurant elegant dining room interior"
+                      src="/images/474262271_647032337746174_7880046345788540048_n.jpg" 
+                      alt="Elle Restaurant elegant bar with marble countertop and sophisticated atmosphere"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-1000"
                     />
@@ -129,7 +131,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-1/20 to-accent-warm/20 border-4 border-accent-1/30 flex items-center justify-center">
-                    <div className="text-5xl">👨🏻‍🦲</div>
+                    <div className="text-3xl font-display font-bold text-accent-1">JL</div>
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent-1 rounded-full flex items-center justify-center">
                     <div className="text-white text-sm font-bold">JAY</div>
@@ -144,7 +146,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-warm/20 to-accent-1/20 border-4 border-accent-warm/30 flex items-center justify-center">
-                    <div className="text-5xl">👨🏻‍💼</div>
+                    <div className="text-3xl font-display font-bold text-accent-warm">IS</div>
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent-warm rounded-full flex items-center justify-center">
                     <div className="text-white text-sm font-bold">IZZY</div>
@@ -198,8 +200,8 @@ export default function AboutPage() {
                 <div className="bohemian-frame">
                   <div className="bohemian-photo-wrapper">
                     <Image 
-                      src="/images/elle6.jpg" 
-                      alt="Elle's sophisticated bar area with elegant atmosphere"
+                      src="/images/elle-food-dish-1.jpg" 
+                      alt="Elle's exquisite culinary presentation showcasing our Bohemian chic style"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-1000"
                     />
@@ -251,7 +253,7 @@ export default function AboutPage() {
             
             <div className="order-1 lg:order-2">
               <p className="text-ink leading-relaxed mb-6">
-                Under the guidance of Executive Chef Giovanni Casola and current Chef Adam Brooks, Elle's kitchen operates on a simple but profound principle: everything is made from scratch with love. Our Mediterranean-inspired cuisine features the freshest seasonal ingredients, prepared with techniques that honor traditional Italian foundations while embracing modern creativity.
+                Our award-winning kitchen operates on a simple but profound principle: everything is made from scratch with love. Our talented culinary team creates Mediterranean-inspired cuisine featuring the freshest seasonal ingredients, prepared with techniques that honor traditional Italian foundations while embracing modern creativity.
               </p>
               
               <p className="text-ink leading-relaxed mb-6">
@@ -263,7 +265,7 @@ export default function AboutPage() {
                 <p className="accent-text text-lg italic leading-relaxed">
                   We believe in the power of fresh ingredients to transform a simple meal into an extraordinary experience. Every dish reflects our commitment to excellence and our love for the culinary arts.
                 </p>
-                <div className="bohemian-quote-attribution">~ Executive Chef Giovanni Casola</div>
+                <div className="bohemian-quote-attribution">~ Elle Culinary Team</div>
               </div>
             </div>
           </div>
@@ -303,7 +305,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-ink leading-relaxed">
-                Under the original leadership of Chef Patrick Capuozzo—formerly of Parallax, Nora, and Flying Fig—Elle quickly gained recognition for its elevated approach to Mediterranean cuisine. The restaurant's commitment to fresh, made-from-scratch cooking began attracting attention from local food critics and diners alike.
+                Elle quickly gained recognition for its elevated approach to Mediterranean cuisine. Our kitchen's commitment to fresh, made-from-scratch cooking and innovative techniques began attracting attention from local food critics and diners alike, establishing Elle as a culinary destination.
               </p>
             </div>
             
@@ -329,7 +331,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-ink leading-relaxed">
-                Today, with Chef Adam Brooks creating new amazing dishes while honoring Elle's founding principles, the restaurant continues to evolve while maintaining its core mission: to provide exceptional Mediterranean-inspired cuisine in an atmosphere that celebrates the feminine divine.
+                Today, our exceptional culinary team continues creating amazing dishes while honoring Elle's founding principles. The restaurant continues to evolve while maintaining its core mission: to provide exceptional Mediterranean-inspired cuisine in an atmosphere that celebrates the feminine divine.
               </p>
             </div>
           </div>
@@ -345,16 +347,12 @@ export default function AboutPage() {
             <p className="text-lg text-ink mb-8 max-w-2xl mx-auto">
               Join us in our Bohemian sanctuary where every detail honors the feminine essence and every dish is prepared from scratch with love. Located in the heart of Solon, we're ready to welcome you to the Elle experience.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${contentData.business.phone}`}
-                className="bg-accent-1 hover:bg-accent-warm text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Make a Reservation
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ReservationWidget />
+              <OnlineOrdering />
               <a
                 href="/menu"
-                className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"
+                className="border-2 border-accent-1/80 hover:border-accent-1 text-accent-1 hover:text-accent-warm px-6 py-3 rounded-full font-medium transition-all duration-300"
               >
                 Explore Our Menu
               </a>
