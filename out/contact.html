@@ -67,12 +67,22 @@
             height: 80px;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
         .logo-text {
             font-family: 'Dancing Script', cursive;
             font-size: 36px;
             color: var(--accent-1);
             font-weight: 600;
-            text-decoration: none;
         }
 
         .nav-links {
@@ -478,15 +488,17 @@
     <header class="header">
         <div class="nav-container">
             <div class="nav-content">
-                <a href="/" class="logo-text">Elle</a>
+                <a href="/" class="logo">
+                    <span class="logo-text">Elle</span>
+                </a>
                 <nav>
                     <ul class="nav-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/menu.html">Menu</a></li>
-                        <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="/drinks">Drinks & Wine</a></li>
                         <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
-                        <li><a href="/contact.html" class="active">Contact</a></li>
+                        <li><a href="/contact" class="active">Contact</a></li>
                     </ul>
                     <button class="mobile-menu-btn">☰</button>
                 </nav>
@@ -613,7 +625,7 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <p>
-                    <a href="/menu.html">Menu</a><br>
+                    <a href="/menu">Menu</a><br>
                     <a href="/drinks-wine.html">Drinks & Wine</a><br>
                     <a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank">Order Online</a><br>
                     <a href="https://www.opentable.com/r/elle-restaurant-and-lounge-reservations-solon?restref=1269154" target="_blank">Reservations</a>
@@ -645,11 +657,11 @@
         <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
         <ul class="mobile-menu-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/menu.html">Menu</a></li>
-            <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/drinks">Drinks & Wine</a></li>
             <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
-            <li><a href="/contact.html" class="active">Contact</a></li>
+            <li><a href="/contact" class="active">Contact</a></li>
             <li style="margin-top: 40px;"><a href="tel:+14406563553" style="color: var(--accent-1);">(440) 656-3553</a></li>
         </ul>
     </div>

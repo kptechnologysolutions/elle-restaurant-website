@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks & Wine | Elle Restaurant & Lounge</title>
+    <meta name="description" content="Elle Restaurant & Lounge Drinks & Wine Menu - Signature cocktails, curated wine selection, and craft beers">
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="version" content="2.0.3">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --brand-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --ink: #f8f6f0;
+            --subtle-ink: #e8e6e0;
+            --muted-ink: #a8a6a0;
+            --accent-1: #c9a876;
+            --accent-2: #8b7355;
+            --accent-warm: #d4a574;
+            --divider: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+            background: var(--brand-bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--brand-bg);
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: var(--accent-1);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 14px;
+            transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-1);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Menu Container */
+        .menu-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        /* Menu Header */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .menu-title {
+            font-size: clamp(3rem, 6vw, 4rem);
+            color: var(--accent-1);
+            margin-bottom: 16px;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .menu-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: var(--subtle-ink);
+            font-style: italic;
+        }
+
+        /* Section Styles */
+        .menu-section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--accent-1);
+            margin-bottom: 8px;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Menu Items */
+        .menu-items {
+            display: grid;
+            gap: 32px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(201, 168, 118, 0.1);
+            gap: 24px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: 4px;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .item-description {
+            color: var(--subtle-ink);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .item-price {
+            color: var(--accent-1);
+            font-size: 18px;
+            font-weight: 400;
+            white-space: nowrap;
+            font-family: 'Crimson Text', serif;
+        }
+
+        /* Wine Grid */
+        .wine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .wine-column h3 {
+            font-size: 24px;
+            color: var(--accent-1);
+            margin-bottom: 24px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+        }
+
+        /* Ornamental Divider */
+        .ornamental-divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+            margin: 24px auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-top: 1px solid var(--divider);
+        }
+
+        .footer-text {
+            color: var(--muted-ink);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .menu-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .item-price {
+                align-self: flex-start;
+            }
+
+            .wine-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-bg);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu-links li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu-links a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu-links a:hover,
+        .mobile-menu-links a.active {
+            color: var(--accent-1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-text">Elle</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="/drinks" class="active">Drinks & Wine</a></li>
+                        <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn">☰</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <!-- Menu Header -->
+        <div class="menu-header">
+            <h1 class="menu-title">Cocktails • Wine • Spirits</h1>
+            <p class="menu-subtitle">~ Crafted with Passion ~</p>
+            <div class="ornamental-divider"></div>
+        </div>
+
+        <!-- SIGNATURE COCKTAILS Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Signature Cocktails</h2>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Pisco Sour</h3>
+                        <p class="item-description">Macchu pisco, lime, house-made simple, egg white, angostura bitters</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Paloma</h3>
+                        <p class="item-description">Casamigos reposado, Lillet rose, grapefruit</p>
+                    </div>
+                    <span class="item-price">16</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Sidecar</h3>
+                        <p class="item-description">Hennessy vsop, foulard calvados, Cointreau, lemon</p>
+                    </div>
+                    <span class="item-price">24</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Elle Spritz</h3>
+                        <p class="item-description">House-made limoncello, prosecco, soda</p>
+                    </div>
+                    <span class="item-price">14</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Ellevated Espresso Martini</h3>
+                        <p class="item-description">Vodka, frangelico, nocino, cookie butter syrup, espresso</p>
+                    </div>
+                    <span class="item-price">18</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Division Bell</h3>
+                        <p class="item-description">Casamigos mezcal, aperol, maraschino liqueur, lime</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Old Fashioned</h3>
+                        <p class="item-description">Buffalo trace, demerara, orange, angostura bitters</p>
+                    </div>
+                    <span class="item-price">18</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Vieux Carré</h3>
+                        <p class="item-description">Hennessy xo, whistle pig 10, carpano antica, benedictine, peychaud's, angostura</p>
+                    </div>
+                    <span class="item-price">30</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Black Manhattan</h3>
+                        <p class="item-description">Basil hayden dark rye, amaro nonino, angostura, black walnut bitters</p>
+                    </div>
+                    <span class="item-price">20</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Negroni</h3>
+                        <p class="item-description">Nolet's, campari, sweet vermouth</p>
+                    </div>
+                    <span class="item-price">16</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Ellevated Margarita</h3>
+                        <p class="item-description">Hibiscus infused casamigos blanco, grand marnier, crème de violette, lavender, lime</p>
+                    </div>
+                    <span class="item-price">16</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Elle 75</h3>
+                        <p class="item-description">Empress, elderflower, prosecco, lime</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Through the Tall Grass</h3>
+                        <p class="item-description">Lemongrass infused vodka, simple syrup, fresh lemon</p>
+                    </div>
+                    <span class="item-price">13</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEER Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Beer</h2>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Scrimshaw Pilsner</h3>
+                    </div>
+                    <span class="item-price">5</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">3 Floyds Zombie Dust</h3>
+                    </div>
+                    <span class="item-price">6</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">La Chouffe Blond Ale</h3>
+                    </div>
+                    <span class="item-price">8</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Brooklyn Lager</h3>
+                    </div>
+                    <span class="item-price">5</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Jackie O's Mystic Mama IPA</h3>
+                    </div>
+                    <span class="item-price">6</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Seasonal Cider</h3>
+                    </div>
+                    <span class="item-price">7</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Left Hand Nitro Stout</h3>
+                    </div>
+                    <span class="item-price">6</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Delirium Tremens Belgian Strong Ale</h3>
+                    </div>
+                    <span class="item-price">12</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Einstock Icelandic Toasted Porter</h3>
+                    </div>
+                    <span class="item-price">8</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Clausthaler NA</h3>
+                    </div>
+                    <span class="item-price">5</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- WINE Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Wine</h2>
+            </div>
+            
+            <!-- Sparkling -->
+            <div style="margin-bottom: 60px;">
+                <h3 style="font-size: 28px; color: var(--accent-1); text-align: center; margin-bottom: 32px; font-family: 'Playfair Display', serif; font-weight: 300;">Sparkling</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Prosecco</h3>
+                            <p class="item-description">Canella brut, Veneto, Italy</p>
+                        </div>
+                        <span class="item-price">12 / 46</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Moscato d'Asti</h3>
+                            <p class="item-description">La Spinetta "Bricco Quaglia", Piedmont, Italy</p>
+                        </div>
+                        <span class="item-price">16 / 62</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Prosecco Rosé</h3>
+                            <p class="item-description">Canella brut rosé, Veneto, Italy</p>
+                        </div>
+                        <span class="item-price">12</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Champagne</h3>
+                            <p class="item-description">Laurent Perrier, Champagne, France</p>
+                        </div>
+                        <span class="item-price">24</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Champagne</h3>
+                            <p class="item-description">Laurent Perrier Blanc-de-Blancs, Champagne, France</p>
+                        </div>
+                        <span class="item-price">150</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- White Wines -->
+            <div style="margin-bottom: 60px;">
+                <h3 style="font-size: 28px; color: var(--accent-1); text-align: center; margin-bottom: 32px; font-family: 'Playfair Display', serif; font-weight: 300;">White</h3>
+                <div class="wine-grid">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Chardonnay</h3>
+                                <p class="item-description">Boyer de Bar "les Paysarols", Languedoc, France</p>
+                            </div>
+                            <span class="item-price">15 / 58</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Chardonnay</h3>
+                                <p class="item-description">Broken Dreams, California</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Rhone Blend</h3>
+                                <p class="item-description">Broc Cellars "Love White", Berkeley, California</p>
+                            </div>
+                            <span class="item-price">15 / 58</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Riesling</h3>
+                                <p class="item-description">Max Ferdinand Richter, Riesling Estate, Mosel, Germany</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Pinot Grigio</h3>
+                                <p class="item-description">Tenuta Luisa, Friuli Isonzo Pinot Grigio, Friuli-Venezia Giulia, Italy</p>
+                            </div>
+                            <span class="item-price">13 / 50</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Bordeaux</h3>
+                                <p class="item-description">Château Lamonde de Haux, Bordeaux, France</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Rosé</h3>
+                                <p class="item-description">La Fete Wine Co., Provence, France</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Chardonnay</h3>
+                                <p class="item-description">Panthera, Russian River Valley, California (2021)</p>
+                            </div>
+                            <span class="item-price">80</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Sauvignon Blanc</h3>
+                                <p class="item-description">Poggio Alle Gazze, Tuscany, Italy (2019)</p>
+                            </div>
+                            <span class="item-price">110</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Chardonnay</h3>
+                                <p class="item-description">Flowers, Sonoma Coast, California (2019)</p>
+                            </div>
+                            <span class="item-price">60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Red Wines -->
+            <div style="margin-bottom: 60px;">
+                <h3 style="font-size: 28px; color: var(--accent-1); text-align: center; margin-bottom: 32px; font-family: 'Playfair Display', serif; font-weight: 300;">Red</h3>
+                <div class="wine-grid">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Gamay</h3>
+                                <p class="item-description">Domaine Michel Tete "les Capitans", Beaujolais, France</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Pinot Noir</h3>
+                                <p class="item-description">Cloudline, Willamette Valley, Oregon</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Bordeaux Blend</h3>
+                                <p class="item-description">Scoundrel, Sierra Foothills, Napa, California</p>
+                            </div>
+                            <span class="item-price">14 / 54</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Cabernet Sauvignon</h3>
+                                <p class="item-description">Caymus, Napa, California</p>
+                            </div>
+                            <span class="item-price">22 / 86</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Cabernet Sauvignon</h3>
+                                <p class="item-description">Pedroncelli, Sonoma Russian River, California</p>
+                            </div>
+                            <span class="item-price">15 / 58</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Cabernet Franc</h3>
+                                <p class="item-description">Château de Coulaine, Chinon, France</p>
+                            </div>
+                            <span class="item-price">13 / 50</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Rhone Blend</h3>
+                                <p class="item-description">Domaine de la Solitude, Rhone Valley, France</p>
+                            </div>
+                            <span class="item-price">12 / 46</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Montepulciano</h3>
+                                <p class="item-description">Cataldi Madonna Malandrino, Abruzzo, Italy</p>
+                            </div>
+                            <span class="item-price">16 / 62</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Barbara d'Alba</h3>
+                                <p class="item-description">Pio Cesare, Piedmont, Italy</p>
+                            </div>
+                            <span class="item-price">17 / 66</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Pinot Noir</h3>
+                                <p class="item-description">Maison Louis Latour, Marsannay, Burgundy, France (2018)</p>
+                            </div>
+                            <span class="item-price">75</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Pinot Noir</h3>
+                                <p class="item-description">En Route, Russian River Valley, California (2022)</p>
+                            </div>
+                            <span class="item-price">85</span>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3 class="item-name">Pinot Noir</h3>
+                                <p class="item-description">Belle Glos Clark & Telephone, Santa Maria, California</p>
+                            </div>
+                            <span class="item-price">70</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Reds continued -->
+                <div class="menu-items" style="margin-top: 32px;">
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">GSM</h3>
+                            <p class="item-description">La Bernadine, Châteauneuf-du-Pape (2019)</p>
+                        </div>
+                        <span class="item-price">105</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Syrah</h3>
+                            <p class="item-description">Dusted Valley, Stained Tooth, Columbia Valley, Washington (2020)</p>
+                        </div>
+                        <span class="item-price">85</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Malbec</h3>
+                            <p class="item-description">Schooner Voyage 10, Mendoza, Argentina</p>
+                        </div>
+                        <span class="item-price">65</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Nebbiolo</h3>
+                            <p class="item-description">Reversanti, Barolo, Italy (2017)</p>
+                        </div>
+                        <span class="item-price">100</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Nebbiolo</h3>
+                            <p class="item-description">Produttori del Barbaresco, Barbaresco, Italy (2017)</p>
+                        </div>
+                        <span class="item-price">100</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Amarone della Valpolicella</h3>
+                            <p class="item-description">Tedeschi, Veneto, Italy (2018)</p>
+                        </div>
+                        <span class="item-price">120</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Sangiovese</h3>
+                            <p class="item-description">Cantina di Montalcino, Brunello di Montalcino, Italy (2016)</p>
+                        </div>
+                        <span class="item-price">95</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Zinfandel</h3>
+                            <p class="item-description">Turley Evangelho, Contra Costa, California</p>
+                        </div>
+                        <span class="item-price">85</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Cabernet Sauvignon</h3>
+                            <p class="item-description">Château Mongravey, Margaux, France (2018)</p>
+                        </div>
+                        <span class="item-price">105</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Cabernet Sauvignon</h3>
+                            <p class="item-description">Cliff Lede Stags Leap, Napa Valley, California (2019)</p>
+                        </div>
+                        <span class="item-price">125</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Cabernet Sauvignon</h3>
+                            <p class="item-description">Quilt, Napa, California</p>
+                        </div>
+                        <span class="item-price">70</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Cabernet Sauvignon</h3>
+                            <p class="item-description">Austin Hope, Paso Robles, California</p>
+                        </div>
+                        <span class="item-price">110 (1L)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dessert Wines -->
+            <div>
+                <h3 style="font-size: 28px; color: var(--accent-1); text-align: center; margin-bottom: 32px; font-family: 'Playfair Display', serif; font-weight: 300;">Dessert Wines</h3>
+                <p style="text-align: center; color: var(--subtle-ink); font-style: italic; margin-bottom: 32px;">By the glass only</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Ice Wine</h3>
+                            <p class="item-description">Inniskillin Vidal, Niagara Peninsula, Canada</p>
+                        </div>
+                        <span class="item-price">22</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Tawny Port</h3>
+                            <p class="item-description">Dow's 20 Year, Douro, Portugal</p>
+                        </div>
+                        <span class="item-price">22</span>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3 class="item-name">Sauternes Blend</h3>
+                            <p class="item-description">Far Niente "Dolce", Napa, California</p>
+                        </div>
+                        <span class="item-price">17</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text" style="font-family: 'Dancing Script', cursive; font-size: 24px; color: var(--accent-1); margin-bottom: 16px;">
+            Executive Chef Giovanni Casola
+        </p>
+        <p class="footer-text">ellecle.com</p>
+        <div class="ornamental-divider"></div>
+        <p class="footer-text" style="margin-top: 32px;">
+            © 2025 Elle Restaurant & Lounge. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        <ul class="mobile-menu-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/drinks" class="active">Drinks & Wine</a></li>
+            <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li style="margin-top: 40px;"><a href="tel:+14406563553" style="color: var(--accent-1);">(440) 656-3553</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+            
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
