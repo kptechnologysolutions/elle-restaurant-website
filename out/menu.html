@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Elle Restaurant & Lounge</title>
+    <meta name="description" content="Elle Restaurant & Lounge Menu - Northern Italian & French cuisine in Solon, OH">
+    
+    <!-- Cache Control - Force browsers to get latest version -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --brand-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --ink: #f8f6f0;
+            --subtle-ink: #e8e6e0;
+            --muted-ink: #a8a6a0;
+            --accent-1: #c9a876;
+            --accent-2: #8b7355;
+            --accent-warm: #d4a574;
+            --btn-bg: #c9a876;
+            --btn-text: #0a0a0a;
+            --link: #f8f6f0;
+            --link-hover: #c9a876;
+            --divider: #2a2a2a;
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+            background: var(--brand-bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 300;
+            color: var(--ink);
+        }
+        
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--brand-bg);
+            border-bottom: 1px solid var(--divider);
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: var(--accent-1);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 14px;
+            transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-1);
+        }
+        
+        /* Menu Container */
+        .menu-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        
+        /* Menu Header */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .menu-title {
+            font-size: clamp(3rem, 6vw, 4rem);
+            color: var(--accent-1);
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        
+        .menu-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: var(--subtle-ink);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .menu-updated {
+            color: var(--muted-ink);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Section Styles */
+        .menu-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: var(--accent-1);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-note {
+            color: var(--muted-ink);
+            font-style: italic;
+            font-size: 16px;
+        }
+        
+        /* Menu Items */
+        .menu-items {
+            display: grid;
+            gap: 32px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(201, 168, 118, 0.1);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-details {
+            flex: 1;
+            padding-right: 24px;
+        }
+        
+        .item-name {
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .item-description {
+            color: var(--subtle-ink);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .item-price {
+            color: var(--accent-1);
+            font-size: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        /* Dietary Tags */
+        .dietary-tag {
+            display: inline-block;
+            background: rgba(201, 168, 118, 0.1);
+            color: var(--accent-1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-top: 1px solid var(--divider);
+            margin-top: 120px;
+        }
+        
+        .footer-text {
+            color: var(--muted-ink);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .chef-name {
+            color: var(--accent-1);
+            font-size: 18px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 16px;
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            color: var(--muted-ink);
+            max-width: 600px;
+            margin: 24px auto 0;
+            line-height: 1.5;
+        }
+        
+        /* Divider */
+        .ornamental-divider {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+            margin: 24px auto;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-bg);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 32px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-links {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-menu-links li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu-links a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu-links a:hover,
+        .mobile-menu-links a.active {
+            color: var(--accent-1);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .order-online-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .item-price {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="/" class="logo-text">Elle</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/menu.html" class="active">Menu</a></li>
+                        <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Online Order Button -->
+    <a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" class="order-online-btn">
+        <span>🛍️</span>
+        <span>Order Online</span>
+    </a>
+    
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <!-- Menu Header -->
+        <div class="menu-header">
+            <h1 class="menu-title">Our Menu</h1>
+            <p class="menu-subtitle">~ Northern Italian & French Cuisine ~</p>
+            <p class="menu-updated">Est. 2021 • Menu Updated September 2025</p>
+            <div class="ornamental-divider"></div>
+        </div>
+
+        <!-- STARTERS Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Starters</h2>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Green Goddess Hummus</h3>
+                        <p class="item-description">Lemon oil, pickled vegetable, crispy pita</p>
+                    </div>
+                    <span class="item-price">12</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Roasted Apple Brussels</h3>
+                        <p class="item-description">Roasted Ohio apples, sage, citrus honey, whipped parmesan</p>
+                    </div>
+                    <span class="item-price">13</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Lamb Meatballs</h3>
+                        <p class="item-description">Za'atar ricotta, pomegranate gastrique, fresh mint</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Calamari Fritti</h3>
+                        <p class="item-description">Spicy cherry peppers, yuzu aioli, parsley, lemon wedge</p>
+                    </div>
+                    <span class="item-price">18</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Mussels di Zoppa</h3>
+                        <p class="item-description">PEI mussels, linguica sausage, roasted tomato broth, fresh herbs, lemon, toasted ciabatta with pesto</p>
+                    </div>
+                    <span class="item-price">16</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">House Soup</h3>
+                        <p class="item-description">Daily selection</p>
+                    </div>
+                    <span class="item-price">MP</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Artisan Bread Plate</h3>
+                        <p class="item-description">Assorted Italian breads, honey butter, white bean dip</p>
+                    </div>
+                    <span class="item-price">6</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Burrata Tuscany</h3>
+                        <p class="item-description">Basil pesto, roasted red peppers, pine nuts, pomegranate balsamic, roasted tomatoes, grilled ciabatta</p>
+                    </div>
+                    <span class="item-price">14</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLATBREADS Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Flatbreads</h2>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Margherita<span class="dietary-tag">Vegetarian</span></h3>
+                        <p class="item-description">Roasted tomato, burrata mozzarella, fresh basil</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Fig & Prosciutto</h3>
+                        <p class="item-description">Brie, honey balsamic, EVOO, mission figs, arugula, prosciutto</p>
+                    </div>
+                    <span class="item-price">16</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Sicilian</h3>
+                        <p class="item-description">Red sauce, capicola, prosciutto, ricotta, giardiniera, fresh basil</p>
+                    </div>
+                    <span class="item-price">17</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SALADS Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Salads</h2>
+                <p class="section-note">Add to any salad: chicken | prosciutto | salmon</p>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Elle</h3>
+                        <p class="item-description">Local greens, cucumber, carrot, grape tomato, banana peppers, croutons, Italian vinaigrette</p>
+                    </div>
+                    <span class="item-price">14</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Classic Caesar</h3>
+                        <p class="item-description">Romaine, torn crouton, pecorino, Elle signature Caesar dressing</p>
+                    </div>
+                    <span class="item-price">14</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Grape & Pistachio</h3>
+                        <p class="item-description">Spinach, candied pistachio, purple grapes, orange segments, brie, creamy Greek vinaigrette</p>
+                    </div>
+                    <span class="item-price">15</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAINS Section -->
+        <section class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Mains</h2>
+                <p class="section-note">Add a side Elle or Caesar salad 7</p>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Eggplant Lasagna<span class="dietary-tag">Vegetarian</span></h3>
+                        <p class="item-description">Whipped ricotta, pomodoro sauce, mozzarella, fresh oregano, parmesan</p>
+                    </div>
+                    <span class="item-price">26</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Faroe Island Salmon</h3>
+                        <p class="item-description">Ratatouille, potato coins, cauliflower velouté, olive tapenade</p>
+                    </div>
+                    <span class="item-price">30</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Lobster Oreganata</h3>
+                        <p class="item-description">Buttery garlic and herb crusted lobster tail, citrus and saffron risotto, asparagus</p>
+                    </div>
+                    <span class="item-price">42</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Bone-in Pork Chop</h3>
+                        <p class="item-description">24 hour brined 14 oz pork chop, truffle mash, rappini, miso butter</p>
+                    </div>
+                    <span class="item-price">36</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Prime NY Strip Steak</h3>
+                        <p class="item-description">12 oz prime strip, black garlic butter, frites</p>
+                    </div>
+                    <span class="item-price">49</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Sicilian Caponata<span class="dietary-tag">Vegan</span></h3>
+                        <p class="item-description">Sweet and sour eggplant, fennel, golden raisins, cannellini beans, port agrodolce, cashew ricotta, aquafaba aioli, grilled ciabatta</p>
+                    </div>
+                    <span class="item-price">26</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Scallop and Lemon Gnocchi</h3>
+                        <p class="item-description">Beurre citron, fava beans, spinach, red peppers</p>
+                    </div>
+                    <span class="item-price">40</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Chicken Caprese Sandwich</h3>
+                        <p class="item-description">Basil pesto, mozzarella, heirloom tomato, arugula, balsamic marinated chicken, toasted ciabatta, frites</p>
+                    </div>
+                    <span class="item-price">19</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Chicken Piccata</h3>
+                        <p class="item-description">Chicken breast, broccolini, roasted fingerlings, caramelized lemon, capers</p>
+                    </div>
+                    <span class="item-price">30</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Veal Bolognese</h3>
+                        <p class="item-description">Fresh pappardelle, spinach, smoked tomato, ricotta, ground local veal</p>
+                    </div>
+                    <span class="item-price">29</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Elle Burger</h3>
+                        <p class="item-description">8oz Ohio beef, house pickles, brown butter aioli, imported gouda, brioche bun, frites</p>
+                    </div>
+                    <span class="item-price">22</span>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3 class="item-name">Market Fish</h3>
+                        <p class="item-description">See server</p>
+                    </div>
+                    <span class="item-price">MP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dietary Icons Legend -->
+        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(201, 168, 118, 0.2);">
+            <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 12px; height: 12px; background: #4ade80; border-radius: 50%;"></div>
+                    <span style="font-size: 14px; color: var(--subtle-ink);">Vegetarian</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 12px; height: 12px; background: #60a5fa; border-radius: 50%;"></div>
+                    <span style="font-size: 14px; color: var(--subtle-ink);">Vegan</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 12px; height: 12px; background: #fb923c; border-radius: 50%;"></div>
+                    <span style="font-size: 14px; color: var(--subtle-ink);">Gluten Free</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="chef-name">Executive Chef Giovanni Casola</p>
+        <p class="footer-text">ellecle.com</p>
+        <div class="ornamental-divider"></div>
+        <p class="disclaimer">
+            Consuming raw or undercooked meat, poultry, seafood, shellfish, or eggs may increase your risk of food-borne illness, especially if you have certain health conditions
+        </p>
+        <p class="footer-text" style="margin-top: 32px;">
+            © 2025 Elle Restaurant & Lounge. All rights reserved.
+        </p>
+    </footer>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        <ul class="mobile-menu-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/menu.html" class="active">Menu</a></li>
+            <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+            <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li style="margin-top: 40px;"><a href="tel:+14406563553" style="color: var(--accent-1);">(440) 656-3553</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

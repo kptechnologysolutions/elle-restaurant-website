@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elle Restaurant & Lounge | Northern Italian & French Cuisine | Solon, OH</title>
+    <meta name="description" content="Elle Restaurant & Lounge - Est. 2021. Award-winning Northern Italian & French cuisine in Solon, OH. Fresh pasta, craft cocktails, and elegant Bohemian atmosphere.">
+    
+    <!-- Cache Control - Force browsers to get latest version -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="version" content="2.0.1">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --brand-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --ink: #f8f6f0;
+            --subtle-ink: #e8e6e0;
+            --muted-ink: #a8a6a0;
+            --accent-1: #c9a876;
+            --accent-2: #8b7355;
+            --accent-warm: #d4a574;
+            --btn-bg: #c9a876;
+            --btn-text: #0a0a0a;
+            --link: #f8f6f0;
+            --link-hover: #c9a876;
+            --divider: #2a2a2a;
+            --overlay: rgba(10, 10, 10, 0.8);
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+            font-weight: 400;
+            background: var(--brand-bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 300;
+            color: var(--ink);
+        }
+        
+        /* Header Navigation */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--brand-bg);
+            border-bottom: 1px solid var(--divider);
+            padding: 0;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: var(--accent-1);
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 14px;
+            transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: url('images/elle inside.jpg') center/cover;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+        }
+        
+        .hero-box {
+            text-align: center;
+            max-width: 640px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            padding: 48px;
+            border-radius: 8px;
+        }
+        
+        .established-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 24px;
+            border: 1px solid rgba(201, 168, 118, 0.6);
+            border-radius: 50px;
+            background: rgba(201, 168, 118, 0.1);
+            margin-bottom: 24px;
+        }
+        
+        .established-text {
+            color: var(--accent-1);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .hero-title-accent {
+            display: block;
+            color: var(--accent-1);
+            font-weight: 300;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        .hero-divider {
+            width: 128px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+            margin: 24px auto;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--accent-1);
+            color: var(--btn-text);
+            border: 2px solid var(--accent-1);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-warm);
+            border-color: var(--accent-warm);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 118, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: white;
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+        }
+        
+        /* Info Strip */
+        .info-strip {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .info-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Sections */
+        .section {
+            padding: 96px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            color: var(--accent-1);
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: var(--accent-1);
+            margin-bottom: 48px;
+            font-style: italic;
+        }
+        
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(201, 168, 118, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(201, 168, 118, 0.3);
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .card-title {
+            font-size: 24px;
+            color: var(--accent-1);
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .card-text {
+            color: var(--subtle-ink);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-top: 1px solid var(--divider);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--muted-ink);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-1);
+        }
+        
+        .footer-text {
+            color: var(--muted-ink);
+            font-size: 14px;
+            margin-top: 16px;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-bg);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--accent-1);
+            font-size: 32px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-links {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-menu-links li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu-links a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu-links a:hover,
+        .mobile-menu-links a.active {
+            color: var(--accent-1);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-box {
+                padding: 32px 20px;
+                margin: 0 16px;
+            }
+            
+            .established-badge {
+                padding: 6px 16px;
+                margin-bottom: 20px;
+            }
+            
+            .established-text {
+                font-size: 12px;
+                letter-spacing: 0.05em;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+            
+            .hero-title-accent {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 15px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            .btn-group .btn {
+                width: 100%;
+            }
+            
+            .section {
+                padding: 60px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .info-items {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .footer-content > div {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-text">Elle</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/menu.html">Menu</a></li>
+                        <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+                        <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn">☰</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-box">
+                <div class="established-badge">
+                    <span class="established-text">Est. 2021 • Solon</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Where Every Bite
+                    <span class="hero-title-accent">Tells a Story</span>
+                </h1>
+                
+                <div class="hero-divider"></div>
+                
+                <p class="hero-description">
+                    Experience Chef Adam Brooks' Mediterranean-inspired cuisine featuring fresh, seasonal dishes with an Italian foundation. Every dish prepared from scratch with love in our Bohemian chic atmosphere.
+                </p>
+                
+                <div class="btn-group">
+                    <a href="https://www.opentable.com/r/elle-restaurant-and-lounge-reservations-solon?restref=1269154&lang=en-US&ot_source=Restaurant%20website" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Reserve Your Table</a>
+                    <a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Order Online</a>
+                    <a href="/menu.html" class="btn btn-secondary">View Menu</a>
+                </div>
+                
+                <div class="info-strip">
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-dot"></div>
+                            <span>Happy Hour: Tue-Thu 4-6pm</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-dot" style="animation-delay: 0.5s;"></div>
+                            <span>Fresh pasta • Wine pairings</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-dot" style="animation-delay: 1s;"></div>
+                            <span>(440) 656-3553</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artisan Creations Section -->
+    <section class="section">
+        <h2 class="section-title">Artisan Creations</h2>
+        <p class="section-subtitle">~ Where tradition meets wanderlust ~</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🧀</div>
+                <h3 class="card-title">Burrata Tuscany</h3>
+                <p class="card-text">Creamy burrata with basil pesto, roasted red peppers, pine nuts, pomegranate balsamic, and grilled ciabatta.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🦪</div>
+                <h3 class="card-title">Mussels di Zoppa</h3>
+                <p class="card-text">PEI mussels with linguica sausage in roasted tomato broth, fresh herbs, lemon, and toasted ciabatta with pesto.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🐟</div>
+                <h3 class="card-title">Faroe Island Salmon</h3>
+                <p class="card-text">Fresh Atlantic salmon with ratatouille, potato coins, cauliflower velouté, and olive tapenade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" style="background: var(--secondary-bg);">
+        <h2 class="section-title">The Elle Experience</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 48px; color: var(--subtle-ink); line-height: 1.8;">
+            Step into Elle's Bohemian chic atmosphere created by restaurateurs Jay Leitson and Izzy Schachner. Named "Elle" meaning "her" in French, our restaurant pays homage to all that is maternal, womanly and goddess-like, featuring lush fabrics, sparkly chandeliers and handsome furniture in an eclectic and inviting space.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px; text-align: center;">
+            <div>
+                <div style="font-size: 48px; margin-bottom: 12px;">🕯️</div>
+                <p style="color: var(--accent-1); font-family: 'Dancing Script', cursive;">Intimate Ambiance</p>
+            </div>
+            <div>
+                <div style="font-size: 48px; margin-bottom: 12px;">🍷</div>
+                <p style="color: var(--accent-1); font-family: 'Dancing Script', cursive;">Curated Wines</p>
+            </div>
+            <div>
+                <div style="font-size: 48px; margin-bottom: 12px;">🥂</div>
+                <p style="color: var(--accent-1); font-family: 'Dancing Script', cursive;">Private Events</p>
+            </div>
+            <div>
+                <div style="font-size: 48px; margin-bottom: 12px;">💫</div>
+                <p style="color: var(--accent-1); font-family: 'Dancing Script', cursive;">Unforgettable Moments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elle Story Section -->
+    <section class="section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: center;">
+                <div>
+                    <p class="section-subtitle">~ A Bohemian Sanctuary ~</p>
+                    <h2 class="section-title" style="text-align: left;">The Elle Story</h2>
+                    <div style="width: 80px; height: 1px; background: var(--accent-1); margin: 24px 0;"></div>
+                    <p style="color: var(--subtle-ink); line-height: 1.8; margin-bottom: 24px;">
+                        Named "Elle" meaning "her" in French, our restaurant pays homage to all that is maternal, womanly, and goddess-like. Created by restaurateurs Jay Leitson and Izzy Schachner, Elle embodies elegance and sophistication.
+                    </p>
+                    <blockquote style="border-left: 3px solid var(--accent-1); padding-left: 24px; margin: 32px 0;">
+                        <p style="font-style: italic; color: var(--accent-1); font-size: 18px; line-height: 1.6;">
+                            "From-scratch Northern Italian and French cuisine meets Bohemian chic atmosphere. Every dish is prepared with love using the freshest seasonal ingredients."
+                        </p>
+                        <footer style="margin-top: 16px; color: var(--muted-ink);">— Elle Restaurant & Lounge</footer>
+                    </blockquote>
+                    <p style="color: var(--subtle-ink); line-height: 1.8;">
+                        Step into our eclectic space featuring lush fabrics, sparkly chandeliers, and handsome furniture. Experience award-winning cuisine, craft cocktails, and an atmosphere that transforms every meal into an unforgettable occasion.
+                    </p>
+                </div>
+                <div style="position: relative;">
+                    <img src="/images/elle-restaurant-exterior.jpg" alt="Elle Restaurant Bohemian Interior" style="width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured In Section -->
+    <section style="background: var(--secondary-bg); padding: 96px 24px;">
+        <h2 class="section-title">Featured In</h2>
+        <div style="max-width: 1200px; margin: 48px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 32px; border-radius: 8px; text-align: center;">
+                <h3 style="color: var(--accent-1); font-size: 20px; margin-bottom: 16px; font-family: 'Playfair Display', serif;">Cleveland.com</h3>
+                <p style="color: var(--subtle-ink); font-style: italic; line-height: 1.6;">
+                    "Elle brings sophisticated Mediterranean dining to Solon with Chef Brooks' innovative seasonal menu."
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 32px; border-radius: 8px; text-align: center;">
+                <h3 style="color: var(--accent-1); font-size: 20px; margin-bottom: 16px; font-family: 'Playfair Display', serif;">The Plain Dealer</h3>
+                <p style="color: var(--subtle-ink); font-style: italic; line-height: 1.6;">
+                    "A Bohemian chic atmosphere paired with exceptional Northern Italian and French cuisine."
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 32px; border-radius: 8px; text-align: center;">
+                <h3 style="color: var(--accent-1); font-size: 20px; margin-bottom: 16px; font-family: 'Playfair Display', serif;">Cleveland Magazine</h3>
+                <p style="color: var(--subtle-ink); font-style: italic; line-height: 1.6;">
+                    "Elle's from-scratch approach and creative cocktails make it a must-visit destination."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">~ Moments at Elle ~</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 48px;">
+            <img src="/images/elle2.jpg" alt="Elle Restaurant" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="/images/elle6.jpg" alt="Elle Bar" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="/images/elle8.jpg" alt="Elle Dishes" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+            <img src="/images/elle10.jpg" alt="Elle Interior" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: var(--accent-2); padding: 96px 24px; text-align: center;">
+        <h2 style="color: var(--ink); font-size: 2.5rem; margin-bottom: 24px;">Reserve Your Table at Elle</h2>
+        <p style="color: var(--ink); opacity: 0.9; font-size: 18px; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Experience the sophisticated dining destination in the heart of Cleveland's eastern suburbs.
+        </p>
+        <a href="https://www.opentable.com/r/elle-restaurant-and-lounge-reservations-solon?restref=1269154&lang=en-US&ot_source=Restaurant%20website" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: var(--brand-bg); color: var(--ink); border-color: var(--brand-bg);">
+            Make a Reservation on OpenTable
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Logo and Info -->
+            <div style="margin-bottom: 48px;">
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 48px; color: var(--accent-1); margin-bottom: 24px;">Elle</h3>
+                <p style="color: var(--subtle-ink); font-style: italic; margin-bottom: 16px;">Restaurant & Lounge</p>
+            </div>
+
+            <!-- Contact Info Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-bottom: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <!-- Address -->
+                <div>
+                    <h4 style="color: var(--accent-1); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Location</h4>
+                    <p class="footer-text">33730 Bainbridge Rd</p>
+                    <p class="footer-text">Solon, OH 44139</p>
+                    <a href="tel:+14406563553" style="color: var(--accent-1); text-decoration: none; display: inline-block; margin-top: 8px;">(440) 656-3553</a>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 style="color: var(--accent-1); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Hours</h4>
+                    <p class="footer-text">Tuesday - Thursday: 4pm - 9pm</p>
+                    <p class="footer-text">Friday: 4pm - 10pm</p>
+                    <p class="footer-text">Saturday: 5pm - 10pm</p>
+                    <p class="footer-text">Sunday - Monday: Closed</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 style="color: var(--accent-1); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Quick Links</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="/menu.html" style="color: var(--muted-ink); text-decoration: none; transition: color 0.3s;">Menu</a>
+                        <a href="/drinks-wine.html" style="color: var(--muted-ink); text-decoration: none; transition: color 0.3s;">Drinks & Wine</a>
+                        <a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--muted-ink); text-decoration: none; transition: color 0.3s;">Order Online</a>
+                        <a href="https://www.opentable.com/r/elle-restaurant-and-lounge-reservations-solon?restref=1269154" target="_blank" style="color: var(--muted-ink); text-decoration: none; transition: color 0.3s;">Reservations</a>
+                        <a href="/contact.html" style="color: var(--muted-ink); text-decoration: none; transition: color 0.3s;">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div style="padding-top: 32px; border-top: 1px solid rgba(201, 168, 118, 0.2);">
+                <p class="footer-text" style="color: var(--accent-1); font-family: 'Dancing Script', cursive; font-size: 18px; margin-bottom: 8px;">
+                    Executive Chef Giovanni Casola
+                </p>
+                <p class="footer-text" style="font-size: 13px;">
+                    © 2025 Elle Restaurant & Lounge. All rights reserved. | <a href="/privacy-policy.html" style="color: var(--muted-ink); text-decoration: none;">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        <ul class="mobile-menu-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/menu.html">Menu</a></li>
+            <li><a href="/drinks-wine.html">Drinks & Wine</a></li>
+            <li><a href="https://www.toasttab.com/elle-restaurant-lounge/v3" target="_blank" style="color: var(--accent-1);">Order Online</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li style="margin-top: 40px;"><a href="tel:+14406563553" style="color: var(--accent-1);">(440) 656-3553</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

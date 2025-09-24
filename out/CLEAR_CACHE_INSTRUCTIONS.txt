@@ -1,0 +1,69 @@
+CLEAR CACHE INSTRUCTIONS FOR ELLE WEBSITE
+==========================================
+
+If you're seeing the old version of the website, try these steps:
+
+QUICK FIX (Try First):
+----------------------
+1. Hard Refresh:
+   - Mac: Press Cmd + Shift + R
+   - Windows: Press Ctrl + Shift + R
+   - Or hold Shift and click the Reload button
+
+2. Force Reload with Cache Clear:
+   - Mac: Press Cmd + Option + R
+   - Windows: Press Ctrl + F5
+
+BROWSER-SPECIFIC CLEAR CACHE:
+-----------------------------
+
+Chrome:
+1. Press Cmd+Shift+Delete (Mac) or Ctrl+Shift+Delete (Windows)
+2. Select "Cached images and files"
+3. Choose time range: "Last hour" or "All time"
+4. Click "Clear data"
+
+Safari:
+1. Menu Bar → Safari → Preferences
+2. Advanced tab → Check "Show Develop menu"
+3. Close Preferences
+4. Menu Bar → Develop → Empty Caches
+5. Reload the page
+
+Firefox:
+1. Press Cmd+Shift+Delete (Mac) or Ctrl+Shift+Delete (Windows)
+2. Select "Cache"
+3. Choose time range: "Last hour" or "Everything"
+4. Click "Clear Now"
+
+Edge:
+1. Press Ctrl+Shift+Delete
+2. Select "Cached images and files"
+3. Click "Clear now"
+
+ALTERNATIVE METHOD - PRIVATE/INCOGNITO MODE:
+--------------------------------------------
+Open the website in a private/incognito window:
+- Chrome/Edge: Ctrl+Shift+N (Windows) or Cmd+Shift+N (Mac)
+- Safari: Cmd+Shift+N
+- Firefox: Ctrl+Shift+P (Windows) or Cmd+Shift+P (Mac)
+
+URL TRICK:
+----------
+Add a query string to force fresh load:
+Instead of: https://ellecle.com
+Use: https://ellecle.com?v=2
+
+Or for menu:
+Instead of: https://ellecle.com/menu
+Use: https://ellecle.com/menu?v=2
+
+DEVELOPER MODE (Most Reliable):
+--------------------------------
+1. Open Developer Tools:
+   - Right-click → Inspect
+   - Or press F12 (Windows) or Cmd+Option+I (Mac)
+2. Right-click the Reload button
+3. Select "Empty Cache and Hard Reload"
+
+Note: The website now includes cache-busting headers that should prevent this issue in the future.
