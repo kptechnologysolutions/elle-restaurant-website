@@ -19,7 +19,6 @@ const menuSections = [
       { name: "Lamb Meatballs", description: "Za'atar ricotta, pomegranate gastrique, fresh mint", price: "15" },
       { name: "Calamari Fritti", description: "Spicy cherry peppers, yuzu aioli, parsley, lemon wedge", price: "18" },
       { name: "Mussels di Zoppa", description: "PEI mussels, linguica sausage, roasted tomato broth, fresh herbs, lemon, toasted ciabatta with pesto", price: "16" },
-      { name: "Beef Carpaccio", description: "Capers, shaved parmesan, lemon oil, basil, sea salt, mustard aioli", price: "16" },
       { name: "House Soup", description: "Daily selection", price: "MP" },
       { name: "Artisan Bread Plate", description: "Assorted Italian breads, honey butter, white bean dip", price: "6" },
       { name: "Burrata Tuscany", description: "Basil pesto, roasted red peppers, pine nuts, pomegranate balsamic, roasted tomatoes, grilled ciabatta", price: "14" }
